@@ -1,0 +1,15 @@
+<mat-toolbar>
+  <span>Challenger</span>
+  <button mat-raised-button routerLink="/">Collections</button>
+  <button mat-flat-button>Collection</button>
+</mat-toolbar>
+<div class="gallery">
+  <ng-container *ngFor="let photo of photos$ | async">
+    <mat-card class="gallery-item" (click)="handleGotoPhoto(photo)">
+      <mat-card-content
+        fxLayout="row"
+        fxLayoutAlign="center"><img [src]="photo.urls.thumb" [alt]="photo.alt_description"></mat-card-content>
+      <mat-card-footer fxLayout="column" fxLayoutAlign="center end">{{photo.likes}} likes</mat-card-footer>
+    </mat-card>
+  </ng-container>
+</div>

@@ -1,0 +1,41 @@
+.mat-toolbar {
+  span, button {
+    margin: 0 1rem 0 0;
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.gallery-item {
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 4px;
+  background: white;
+  margin: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 8px 8px 8px rgba(0,0,0,.2), 0 8px 8px 0 rgba(0,0,0,.14), 0 8px 8px 0 rgba(0,0,0,.12) !important;
+    transform: translate3d(0,0,0);
+    transition: background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  }
+}
+
+.mat-card {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.mat-card-footer {
+  margin: auto 0 0 1rem;
+}
+
+.mat-flat-button {
+  cursor: default;
+}
