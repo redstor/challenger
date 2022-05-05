@@ -34,8 +34,6 @@ jobs:
 
       - run: ng lint
 
-      - run: ng test
-
       - run: ng build --prod --base-href https://redstor.github.io/challenger/
 
       - name: Deploy
