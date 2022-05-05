@@ -1,9 +1,10 @@
 # Challenger
 
-Welcome to the challenger app. This is a playground for new ideas and to test your skills.
+Welcome to Redstor's challenger app! This is a playground for you to try out new ideas and put your skills to the test.
 
 ## Suggestions
 
-Have a look at `https://github.com/redstor/challenger/issues` for things that can be improved. 
-
-If you have a great idea then feel free to log an issue for it.
+* Start by taking a look at `https://github.com/redstor/challenger/issues`. This is where we've listed areas where there's room for improvement.
+* Explore and make changes as you see fit. There are no rules, so let your imagination run wild!
+* If you have a great idea, feel free to log an issue for it.
+* Don't forget to have fun!
