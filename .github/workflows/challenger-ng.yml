@@ -40,6 +40,8 @@ jobs:
 
       # - run: npm run e2e -- --configuration=ci
 
+      - run: cp .nojekyl ./challenger-ng/dist/challenger
+
       - name: Deploy
         uses:
           crazy-max/ghaction-github-pages@v2
