@@ -36,12 +36,16 @@ jobs:
 
       - run: ng build --prod --base-href https://redstor.github.io/challenger/
 
+      # - run: npm run test -- --configuration=ci
+
+      # - run: npm run e2e -- --configuration=ci
+
       - name: Deploy
         uses:
           crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
-          build_dir: build
+          build_dir: ./challenger-ng/dist
         env:
           GITHUB_TOKEN: ${{ secrets.CHALLENGER_DEPLOY_TOKEN }}
           UNSPLASH_ACCESS_KEY: ${{ secrets.CHALLENGER_UNSPLASH_ACCESS_KEY }}
