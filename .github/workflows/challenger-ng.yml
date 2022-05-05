@@ -40,7 +40,7 @@ jobs:
 
       - run: npx ng build --configuration=production
 
-      - run: npx ng test --watch=false --browsers=ChromeHeadless
+#      - run: npx ng test --watch=false --browsers=ChromeHeadless
 
       - run: cp .nojekyll ./dist/challenger
 
