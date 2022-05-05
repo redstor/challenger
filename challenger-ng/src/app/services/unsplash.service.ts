@@ -7,14 +7,14 @@ import { Photo } from '../models/photo.model';
 import { EnvironmentService } from '@app/services/environment.service';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class UnsplashService {
   api;
 
   constructor(environment: EnvironmentService) {
     this.api = createApi({
-      accessKey: environment.unsplashAccessKey,
+      accessKey: environment.unsplashAccessKey
     });
   }
 

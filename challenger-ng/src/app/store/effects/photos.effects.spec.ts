@@ -10,7 +10,7 @@ describe('PhotosEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PhotosEffects, provideMockActions(() => actions$)],
+      providers: [PhotosEffects, provideMockActions(() => actions$)]
     });
 
     effects = TestBed.inject(PhotosEffects);

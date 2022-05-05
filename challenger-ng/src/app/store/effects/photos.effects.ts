@@ -20,7 +20,7 @@ export class PhotosEffects {
                 return result.type === 'success'
                   ? loadPhotosSuccess({
                       collectionId: id,
-                      photos: result.response.results,
+                      photos: result.response.results
                     })
                   : loadPhotosFailure();
               })

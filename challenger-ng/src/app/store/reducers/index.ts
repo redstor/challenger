@@ -13,7 +13,7 @@ export interface State {
 export const reducers: ActionReducerMap<State> = {
   collections: fromCollections.reducer,
   photos: fromPhotos.reducer,
-  router: routerReducer,
+  router: routerReducer
 };
 
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];

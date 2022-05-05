@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-collection',
   templateUrl: './collection.component.html',
-  styleUrls: ['./collection.component.scss'],
+  styleUrls: ['./collection.component.scss']
 })
 export class CollectionComponent implements OnInit {
   photos$: Observable<ReadonlyArray<Photo>> = this.store.select(selectPhotos);

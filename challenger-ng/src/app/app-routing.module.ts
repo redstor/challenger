@@ -7,11 +7,11 @@ import { CollectionComponent } from './collection/collection.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'collection/:collectionId', component: CollectionComponent },
-  { path: 'collection/:collectionId/photo/:photoId', component: PhotoComponent },
+  { path: 'collection/:collectionId/photo/:photoId', component: PhotoComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

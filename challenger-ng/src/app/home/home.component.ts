@@ -8,7 +8,7 @@ import { selectCollections } from '../store/selectors/collections.selectors';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   collections$: Observable<ReadonlyArray<Collection>> = this.store.pipe(select(selectCollections));

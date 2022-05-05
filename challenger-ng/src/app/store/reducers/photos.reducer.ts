@@ -11,7 +11,7 @@ export interface State {
 
 export const initialState: State = {
   collectionId: undefined,
-  photos: [],
+  photos: []
 };
 
 export const reducer = createReducer(
@@ -19,6 +19,6 @@ export const reducer = createReducer(
   on(loadPhotosSuccess, (state, { collectionId, photos }) => ({
     ...state,
     collectionId: collectionId,
-    photos: photos,
+    photos: photos
   }))
 );

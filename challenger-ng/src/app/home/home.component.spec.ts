@@ -10,7 +10,7 @@ describe('HomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       providers: [provideMockStore()],
-      declarations: [HomeComponent],
+      declarations: [HomeComponent]
     }).compileComponents();
   });
 

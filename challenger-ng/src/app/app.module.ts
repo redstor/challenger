@@ -27,7 +27,7 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers, {
-      metaReducers,
+      metaReducers
     }),
     RouterModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
@@ -37,12 +37,12 @@ import { MatButtonModule } from '@angular/material/button';
     FlexModule,
     StoreDevtoolsModule.instrument({
       maxAge: 25,
-      logOnly: environment.production,
+      logOnly: environment.production
     }),
     MatToolbarModule,
-    MatButtonModule,
+    MatButtonModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-photo',
   templateUrl: './photo.component.html',
-  styleUrls: ['./photo.component.scss'],
+  styleUrls: ['./photo.component.scss']
 })
 export class PhotoComponent {
   constructor(private store: Store, private router: Router) {}

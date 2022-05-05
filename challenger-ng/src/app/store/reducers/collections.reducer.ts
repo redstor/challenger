@@ -9,7 +9,7 @@ export interface State {
 }
 
 export const initialState: State = {
-  collections: [],
+  collections: []
 };
 
 export const reducer = createReducer(
