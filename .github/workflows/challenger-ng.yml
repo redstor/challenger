@@ -17,19 +17,28 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Install and build
         working-directory: ./challenger-ng
         run: npm install -g @angular/cli
+
       - run: ng lint
+        working-directory: ./challenger-ng
+
       - run: ng test
+        working-directory: ./challenger-ng
+
       - run: ng build --prod --base-href https://redstor.github.io/challenger/
+        working-directory: ./challenger-ng
+
       - name: Deploy
         uses:
-          crazy-max/ghaction-github-pages@v1
+          crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
           build_dir: build
