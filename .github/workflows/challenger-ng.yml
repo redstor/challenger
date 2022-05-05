@@ -34,7 +34,7 @@ jobs:
 
       - run: ng lint
 
-      - run: perl -pi -e 's/UNSPLASH_ACCESS_KEY/"$ENV{UNSPLASH_ACCESS_KEY}"/' ./challenger-ng/src/environments/environment.prod.ts
+      - run: perl -pi -e 's/UNSPLASH_ACCESS_KEY/"$ENV{UNSPLASH_ACCESS_KEY}"/' ./src/environments/environment.prod.ts
         env:
           UNSPLASH_ACCESS_KEY: ${{ secrets.CHALLENGER_UNSPLASH_ACCESS_KEY }}
 
