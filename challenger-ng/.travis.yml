@@ -18,8 +18,8 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  unsplash_access_key: $UNSPLASH_ACCESS_KEY
+  github_token: $CHALLENGER_DEPLOY_TOKEN
+  unsplash_access_key: $CHALLENGER_UNSPLASH_ACCESS_KEY
   keep_history: true
   on:
     branch: main
