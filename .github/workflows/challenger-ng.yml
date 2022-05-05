@@ -15,6 +15,9 @@ jobs:
       matrix:
         node-version: [16.x]
 
+    env:
+      working-directory: ./challenger-ng
+
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -22,6 +25,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
-        run: npm ci
-      - run: npm run build --if-present
-      - run: npm test
+        run: npm install -g @angular/cli
+      - run: npm ci
+      - run: ng lint
+      - run: ng test
+      - run: ng build --prod --base-href https://redstor.github.io/challenger/
+        env:
+          UNSPLASH_ACCESS_KEY: ${{ secrets.CHALLENGER_UNSPLASH_ACCESS_KEY }}
