@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "predeploy": "ng build --production --base-href https://redstor.github.io/challenger/",
+    "predeploy": "ng build --production",
     "deploy": "gh-pages -d build"
   },
   "private": true,

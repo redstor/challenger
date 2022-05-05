@@ -34,13 +34,13 @@ jobs:
 
       - run: ng lint
 
-      - run: ng build --configuration=production --base-href https://redstor.github.io/challenger/
+      - run: ng build --configuration=production
 
       # - run: npm run test -- --configuration=ci
 
       # - run: npm run e2e -- --configuration=ci
 
-      - run: cp .nojekyl ./challenger-ng/dist/challenger
+      - run: cp ./challenger-ng/.nojekyll ./challenger-ng/dist/challenger
 
       - name: Deploy
         uses:
