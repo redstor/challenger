@@ -48,5 +48,5 @@ jobs:
           target_branch: main
           build_dir: ./challenger-ng/dist
         env:
-          GITHUB_PAT: ${{ secrets.CHALLENGER_DEPLOY_TOKEN }}
+          GH_PAT: ${{ secrets.CHALLENGER_DEPLOY_TOKEN }}
           UNSPLASH_ACCESS_KEY: ${{ secrets.CHALLENGER_UNSPLASH_ACCESS_KEY }}
