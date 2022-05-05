@@ -40,13 +40,20 @@ jobs:
 
       - run: ng build --configuration=production
 
-      # - run: npm run test -- --configuration=ci
-
-      # - run: npm run e2e -- --configuration=ci
+      - run: npm run test -- --configuration=ci
 
       - run: cp .nojekyll ./dist/challenger
 
-      - name: Deploy
+      - name: Deploy to repo
+        uses:
+          crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: ./challenger-ng/dist/challenger
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to redstor.github.io
         uses:
           crazy-max/ghaction-github-pages@v2
         with:
