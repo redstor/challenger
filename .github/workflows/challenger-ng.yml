@@ -15,6 +15,10 @@ jobs:
       matrix:
         node-version: [16.x]
 
+    defaults:
+      run:
+        working-directory: ./challenger-ng
+
     steps:
       - uses: actions/checkout@v3
 
@@ -23,21 +27,16 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install and build
-        working-directory: ./challenger-ng
+      - name: Install dependencies
         run: npm install -g @angular/cli
 
       - run: npm install
-        working-directory: ./challenger-ng
 
       - run: ng lint
-        working-directory: ./challenger-ng
 
       - run: ng test
-        working-directory: ./challenger-ng
 
       - run: ng build --prod --base-href https://redstor.github.io/challenger/
-        working-directory: ./challenger-ng
 
       - name: Deploy
         uses:
