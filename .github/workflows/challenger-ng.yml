@@ -26,9 +26,13 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: npm install -g @angular/cli
-      - run: npm ci
       - run: ng lint
       - run: ng test
       - run: ng build --prod --base-href https://redstor.github.io/challenger/
+      - name: Deploy
+        with:
+          target_branch: gh-pages
+          build_dir: build
         env:
+          GITHUB_TOKEN: ${{ secrets.CHALLENGER_DEPLOY_TOKEN }}
           UNSPLASH_ACCESS_KEY: ${{ secrets.CHALLENGER_UNSPLASH_ACCESS_KEY }}
