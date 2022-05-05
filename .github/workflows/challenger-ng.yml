@@ -38,9 +38,9 @@ jobs:
         env:
           UNSPLASH_ACCESS_KEY: ${{ secrets.CHALLENGER_UNSPLASH_ACCESS_KEY }}
 
-      - run: ng build --configuration=production
+      - run: npx ng build --configuration=production
 
-#      - run: npm run test -- --configuration=ci
+      - run: npx ng test --watch=false
 
       - run: cp .nojekyll ./dist/challenger
 
