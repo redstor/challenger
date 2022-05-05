@@ -45,7 +45,7 @@ jobs:
           crazy-max/ghaction-github-pages@v2
         with:
           repo: redstor.github.io
-          target_branch: main
+          target_branch: gh-pages
           build_dir: ./challenger-ng/dist
         env:
           GH_PAT: ${{ secrets.CHALLENGER_DEPLOY_TOKEN }}
