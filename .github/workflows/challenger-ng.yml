@@ -34,6 +34,10 @@ jobs:
 
       - run: ng lint
 
+      - run: perl -pi -e 's/UNSPLASH_ACCESS_KEY/"$ENV{UNSPLASH_ACCESS_KEY}"/' ./challenger-ng/src/environments/environment.prod.ts
+        env:
+          UNSPLASH_ACCESS_KEY: ${{ secrets.CHALLENGER_UNSPLASH_ACCESS_KEY }}
+
       - run: ng build --configuration=production
 
       # - run: npm run test -- --configuration=ci
@@ -51,4 +55,3 @@ jobs:
           build_dir: ./challenger-ng/dist/challenger
         env:
           GH_PAT: ${{ secrets.CHALLENGER_DEPLOY_TOKEN }}
-          UNSPLASH_ACCESS_KEY: ${{ secrets.CHALLENGER_UNSPLASH_ACCESS_KEY }}
