@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - "16"
+dist: trusty
+sudo: required
+
+branches:
+  only:
+    - master
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+  - ng lint
+  - ng build --prod --base-href https://redstor.github.io/challenger/
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  unsplash_access_key: $UNSPLASH_ACCESS_KEY
+  keep_history: true
+  on:
+    branch: main
