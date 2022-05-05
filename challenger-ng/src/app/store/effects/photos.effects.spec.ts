@@ -3,6 +3,7 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
 
 import { PhotosEffects } from './photos.effects';
+import { provideMockStore } from '@ngrx/store/testing';
 
 describe('PhotosEffects', () => {
   let actions$: Observable<any>;
@@ -10,7 +11,7 @@ describe('PhotosEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PhotosEffects, provideMockActions(() => actions$)]
+      providers: [PhotosEffects, provideMockStore(), provideMockActions(() => actions$)]
     });
 
     effects = TestBed.inject(PhotosEffects);
