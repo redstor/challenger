@@ -27,7 +27,7 @@ jobs:
         working-directory: ./challenger-ng
         run: npm install -g @angular/cli
 
-      - run: ng install
+      - run: npm install
         working-directory: ./challenger-ng
 
       - run: ng lint
