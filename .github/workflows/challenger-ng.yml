@@ -32,7 +32,7 @@ jobs:
 
       - run: npm install
 
-      - run: ng lint
+      - run: npx ng lint
 
       - run: perl -pi -e 's/UNSPLASH_ACCESS_KEY/$ENV{UNSPLASH_ACCESS_KEY}/' ./src/environments/environment.prod.ts
         env:
