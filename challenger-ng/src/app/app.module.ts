@@ -1,25 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { FlexModule } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+
+import { environment } from '@environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store';
 import { metaReducers, reducers } from './store/reducers';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CollectionComponent } from './collection/collection.component';
 import { PhotoComponent } from './photo/photo.component';
-import { EffectsModule } from '@ngrx/effects';
 import { CollectionsEffects } from './store/effects/collections.effects';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule } from '@angular/material/card';
-import { FlexModule } from '@angular/flex-layout';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '@environments/environment';
 import { PhotosEffects } from './store/effects/photos.effects';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
+import { PhotoEffects } from './store/effects/photo.effects';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, CollectionComponent, PhotoComponent],
@@ -31,7 +36,7 @@ import { MatButtonModule } from '@angular/material/button';
     }),
     RouterModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
-    EffectsModule.forRoot([CollectionsEffects, PhotosEffects]),
+    EffectsModule.forRoot([CollectionsEffects, PhotosEffects, PhotoEffects]),
     BrowserAnimationsModule,
     MatCardModule,
     FlexModule,
@@ -40,7 +45,9 @@ import { MatButtonModule } from '@angular/material/button';
       logOnly: environment.production
     }),
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,14 +1,22 @@
 <mat-toolbar>
   <span>Challenger</span>
-  <button mat-flat-button>Collections</button>
 </mat-toolbar>
-<div class="gallery">
-  <ng-container *ngFor="let collection of collections$ | async">
-    <mat-card class="gallery-item" [routerLink]="'collection/'+collection.id">
-      <mat-card-title>{{collection.title}}</mat-card-title>
-      <mat-card-content
-        fxLayout="row"
-        fxLayoutAlign="center"><img [src]="collection.cover_photo.urls.thumb" [alt]="collection.cover_photo.description"/></mat-card-content>
-    </mat-card>
-  </ng-container>
+
+<div class="breadcrumbs">
+  <a class="active"><span>Collections</span></a>
+</div>
+
+<div class="layout-container">
+  <mat-progress-bar *ngIf="!(collections$ | async)"></mat-progress-bar>
+
+  <div class="gallery" fxLayout="column" fxLayout.gt-sm="row wrap">
+    <ng-container *ngFor="let collection of collections$ | async">
+      <mat-card fxFlex fxFlex.gt-sm="28" fxFlex.gt-lg="20" class="gallery-item thumbnails" [routerLink]="'/collection/'+collection.id">
+        <img mat-card-image [src]="collection.cover_photo.urls.small" [alt]="collection.cover_photo.description"/>
+        <mat-card-content>
+          <p class="title">{{collection.title}}</p>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
 </div>

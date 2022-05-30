@@ -25,6 +25,14 @@ export interface Photo {
     name: string;
     first_name: string;
     last_name: string;
+    profile_image: {
+      large: string;
+      medium: string;
+      small: string;
+    }
+    portfolio_url: string;
+    location: string;
   };
   likes: number;
+  views: number;
 }
