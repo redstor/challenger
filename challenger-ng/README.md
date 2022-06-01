@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
 
+![pages-build-deployment](https://github.com/redstor/challenger/actions/workflows/pages/pages-build-deployment/badge.svg)
+
 ## Getting started
 
 To get started you will need to create a developer account on `https://unsplash.com/`. 
