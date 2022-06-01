@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Store } from '@ngrx/store';
@@ -14,7 +14,7 @@ import { selectPhoto } from '@app/store/selectors/photo.selectors';
   selector: 'app-photo',
   templateUrl: './photo.component.html',
 })
-export class PhotoComponent {
+export class PhotoComponent implements OnInit {
   photo$: Observable<Photo> = this.store.select(selectPhoto).pipe(map(x => x.photo));
 
   constructor(private store: Store<State>, private router: Router) {

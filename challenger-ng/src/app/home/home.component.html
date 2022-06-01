@@ -7,7 +7,7 @@
 </div>
 
 <div class="layout-container">
-  <mat-progress-bar *ngIf="!(collections$ | async)"></mat-progress-bar>
+  <mat-progress-bar *ngIf="(collections$ | async) === undefined"></mat-progress-bar>
 
   <div class="gallery" fxLayout="column" fxLayout.gt-sm="row wrap">
     <ng-container *ngFor="let collection of collections$ | async">

@@ -9,7 +9,7 @@
 </div>
 
 <div class="layout-container">
-  <mat-progress-bar *ngIf="!(photos$ | async)"></mat-progress-bar>
+  <mat-progress-bar *ngIf="(photos$ | async) === undefined"></mat-progress-bar>
 
   <div class="gallery" fxLayout.sm="column" fxLayout.gt-sm="row wrap">
     <ng-container *ngFor="let photo of photos$ | async">
