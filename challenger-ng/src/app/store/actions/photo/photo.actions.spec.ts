@@ -1,7 +1,8 @@
-import * as fromPhoto from './photo.actions';
+import { PhotoActions } from "..";
 
-describe('loadPhotos', () => {
+describe('loadPhoto', () => { 
   it('should return an action', () => {
-    expect(fromPhoto.loadPhotos().type).toBe('[Photo] Load Photos');
+    expect(PhotoActions.loadPhoto().type).toBe('[Photo] Load Photo');
   });
 });
+
