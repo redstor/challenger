@@ -19,15 +19,10 @@ import { environment } from '@environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { metaReducers, reducers } from './store/reducers';
-import { HomeComponent } from './home/home.component';
-import { CollectionComponent } from './collection/collection.component';
-import { PhotoComponent } from './photo/photo.component';
-import { CollectionsEffects } from './store/effects/collections.effects';
-import { PhotosEffects } from './store/effects/photos.effects';
-import { PhotoEffects } from './store/effects/photo.effects';
+import { appEffects } from './store/effects';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CollectionComponent, PhotoComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,7 +31,7 @@ import { PhotoEffects } from './store/effects/photo.effects';
     }),
     RouterModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
-    EffectsModule.forRoot([CollectionsEffects, PhotosEffects, PhotoEffects]),
+    EffectsModule.forRoot(appEffects),
     BrowserAnimationsModule,
     MatCardModule,
     FlexModule,
