@@ -5,6 +5,7 @@ import { from, Observable } from 'rxjs';
 import { Photo, Collection } from '@app/models';
 import { EnvironmentService } from '@app/shared/services';
 import { Full } from 'unsplash-js/dist/methods/photos/types';
+import { Photos } from 'unsplash-js/dist/methods/search/types/response';
 
 @Injectable({
   providedIn: 'root'
@@ -40,5 +41,11 @@ export class UnsplashService {
     ApiResponse<Full>
   > {
     return from(this.api.photos.get({ photoId: id }));
+  }
+
+  searchPhotos(query: { query: string }): Observable<
+    ApiResponse<Photos>
+  > {
+    return from(this.api.search.getPhotos(query));
   }
 }

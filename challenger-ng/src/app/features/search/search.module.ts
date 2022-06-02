@@ -6,7 +6,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { ComponentsModule } from '@app/shared/components/components.module';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FlexModule } from '@angular/flex-layout';
 
 const routes: Routes = [
   {
@@ -21,12 +24,15 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    ComponentsModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule, 
+    MatProgressBarModule,
+    FlexModule
   ]
 })
 export class SearchModule { }
