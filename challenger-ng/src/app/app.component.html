@@ -1,4 +1,10 @@
-<mat-toolbar>
-  <span>Challenger</span>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Challenger</span>
+    <div>
+      <a mat-button [routerLink]="'collections'">Collections</a>
+      <a mat-button [routerLink]="'search'">Search</a>
+    </div>
+  </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>
