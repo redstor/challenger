@@ -5,28 +5,28 @@ import { CollectionListComponent } from './components/collection-list/collection
 import { CollectionComponent } from './components/collection/collection.component';
 import { ComponentsModule } from '@app/shared/components/components.module';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { PhotoComponent } from '@app/shared/components/photo/photo.component';
 import { FlexModule } from '@angular/flex-layout';
+import { CollectionPhotoComponent } from './components/collection-photo/collection-photo.component';
+import { MatIconModule } from '@angular/material/icon';
 
 const route: Routes = [
-  {
-    path: '',
-    component: CollectionListComponent
-  },
+  { path: '', component: CollectionListComponent },
   { path: 'collection/:collectionId', component: CollectionComponent },
-  { path: 'collection/:collectionId/photo/:photoId', component: PhotoComponent }
+  { path: 'collection/:collectionId/photo/:photoId', component: CollectionPhotoComponent }
 ];
 
 @NgModule({
   declarations: [
     CollectionListComponent,
-    CollectionComponent
+    CollectionComponent,
+    CollectionPhotoComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(route),
     ComponentsModule,
     MatProgressBarModule,
+    MatIconModule,
     FlexModule
   ]
 })

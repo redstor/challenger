@@ -1,0 +1,15 @@
+<div class="breadcrumbs">
+  <a routerLink="/"><span>Collections</span></a>
+  <span> > </span>
+  <a (click)="handleGotoCollection()"><span>Collection</span></a>
+  <span> > </span>
+  <a class="active"><span>Photo</span></a>
+</div>
+
+<div class="layout-container">
+  <mat-progress-bar *ngIf="(photo$ | async) === undefined"></mat-progress-bar>
+
+  <div class="gallery" fxLayout.sm="column">
+    <app-photo [photo]="(photo$ | async)"></app-photo>
+  </div>
+</div>

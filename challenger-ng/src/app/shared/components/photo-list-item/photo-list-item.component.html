@@ -1,6 +1,6 @@
-<mat-card class="gallery-item thumbnails" (click)="photoClicked.next()">
+<mat-card class="gallery-item thumbnails">
   <img mat-card-image [src]="photo_url" [alt]="photo_description"/>
   <mat-card-content>
-    <p class="title">{{title}}</p>
+    <ng-content></ng-content>
   </mat-card-content>
 </mat-card>
