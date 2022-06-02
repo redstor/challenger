@@ -1,3 +1,13 @@
 <div class="breadcrumbs">
   <a class="active"><span>Search</span></a>
 </div>
+
+
+<div class="layout-container">
+  <form class="search-form" [formGroup]="searchForm" (keyup.enter)="newSearch()">
+    <mat-form-field appearance="outline">
+      <mat-icon matSuffix >search</mat-icon>
+      <input matInput type="text" formControlName="search" placeholder="search a photo...">
+    </mat-form-field>
+  </form>
+</div>
