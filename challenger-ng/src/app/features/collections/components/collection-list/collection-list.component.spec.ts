@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CollectionListComponent } from './collection-list.component';
 import { provideMockStore } from '@ngrx/store/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('CollectionListComponent', () => {
   let component: CollectionListComponent;
@@ -9,7 +10,10 @@ describe('CollectionListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       providers: [provideMockStore()],
-      declarations: [CollectionListComponent]
+      declarations: [CollectionListComponent],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     }).compileComponents();
   });
 

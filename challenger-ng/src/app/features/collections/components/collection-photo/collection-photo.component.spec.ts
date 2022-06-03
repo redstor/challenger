@@ -1,4 +1,7 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 
 import { CollectionPhotoComponent } from './collection-photo.component';
 
@@ -8,7 +11,12 @@ describe('CollectionPhotoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CollectionPhotoComponent ]
+      providers: [provideMockStore()],
+      declarations: [ CollectionPhotoComponent ], 
+      imports: [RouterTestingModule.withRoutes([])],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ],
     })
     .compileComponents();
   });

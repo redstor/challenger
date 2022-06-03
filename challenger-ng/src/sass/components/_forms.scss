@@ -1,3 +1,13 @@
+.mat-form-field {
+  .mat-form-field-flex {
+    min-width: 50vw;   
+
+    .mat-form-field-outline-start, .mat-form-field-outline-end {
+      background: rgb(255, 255, 255, 0.4);
+    }
+  }
+}
+
 .search-form {
   display: flex;
   justify-content: center;

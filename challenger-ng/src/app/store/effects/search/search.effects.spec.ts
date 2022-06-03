@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 import { Observable } from 'rxjs';
 
 import { SearchEffects } from './search.effects';
@@ -12,7 +13,8 @@ describe('SearchEffects', () => {
     TestBed.configureTestingModule({
       providers: [
         SearchEffects,
-        provideMockActions(() => actions$)
+        provideMockActions(() => actions$),
+        provideMockStore()
       ]
     });
 
