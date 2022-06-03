@@ -3,9 +3,10 @@
 }
 
 .mat-toolbar {
-  span, button {
-    margin: 0 1rem 0 0;
-  }
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .breadcrumbs {

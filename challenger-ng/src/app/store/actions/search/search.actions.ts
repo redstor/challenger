@@ -1,4 +1,4 @@
-import { Photo, PhotoSearch } from '@app/models';
+import { PhotoSearch } from '@app/models';
 import { createAction, props } from '@ngrx/store';
 
 export const newSearch = createAction(
@@ -7,11 +7,21 @@ export const newSearch = createAction(
 );
 
 export const photoSearchCompleted = createAction(
-  '[Search] Search completed', 
-  props<{ total: number; photosResult: PhotoSearch[] }>()
+  '[Search] Search completed',
+  props<{ totalPages: number; photosResult: PhotoSearch[] }>()
 );
 
-export const loadPhotosFailure = createAction('[Search] Photo Search Failure');
+export const loadPhotosFailure = createAction(
+  '[Search] Photo Search Failure'
+);
 
+export const loadMoreSearchItems = createAction(
+  '[Search] Load more search data'
+);
+
+export const addPhotos = createAction(
+  '[Search] Add more photos to state',
+  props<{ photosResult: PhotoSearch[] }>()
+);
 
 

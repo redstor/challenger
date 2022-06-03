@@ -12,15 +12,15 @@
 
   <mat-progress-bar *ngIf="(results$ | async) === undefined"></mat-progress-bar>
 
-  <div class="gallery" fxLayout.sm="column" fxLayout.gt-sm="row wrap">
+  <div class="gallery" fxLayout.sm="column" fxLayout.gt-sm="row wrap" infiniteScroll [infiniteScrollDistance]="1"
+    [infiniteScrollThrottle]="2000" (scrolled)="onScrollDown()">
     <ng-container *ngFor="let photo of results$ | async">
-      <app-photo-list-item 
-        fxFlex fxFlex.gt-sm="28" fxFlex.gt-lg="20" 
-        [photo_url]="photo.urls.small"
-        [photo_description]="photo.alt_description!" 
-    >
-      <p class="title">{{ photo.alt_description! | slice: 0 : 20 }}</p>
-    </app-photo-list-item>
+      <app-photo-list-item fxFlex fxFlex.gt-sm="28" fxFlex.gt-lg="20" [photo_url]="photo.urls.small"
+        [photo_description]="photo.alt_description!">
+        <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="12px">
+          <p><mat-icon inline>favorite</mat-icon>{{photo.likes}} likes </p>
+        </div>
+      </app-photo-list-item>
     </ng-container>
   </div>
 </div>

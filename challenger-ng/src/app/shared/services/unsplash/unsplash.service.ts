@@ -6,6 +6,7 @@ import { Photo, Collection } from '@app/models';
 import { EnvironmentService } from '@app/shared/services';
 import { Full } from 'unsplash-js/dist/methods/photos/types';
 import { Photos } from 'unsplash-js/dist/methods/search/types/response';
+import { PaginationParams } from 'unsplash-js/dist/types/request';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +44,7 @@ export class UnsplashService {
     return from(this.api.photos.get({ photoId: id }));
   }
 
-  searchPhotos(query: { query: string }): Observable<
+  searchPhotos(query: { query: string } & Pick<PaginationParams, "page" | "perPage">): Observable<
     ApiResponse<Photos>
   > {
     return from(this.api.search.getPhotos(query));

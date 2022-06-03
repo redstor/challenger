@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ComponentsModule } from '@app/shared/components/components.module';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FlexModule } from '@angular/flex-layout';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 const routes: Routes = [
   {
@@ -32,7 +33,8 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule, 
     MatProgressBarModule,
-    FlexModule
+    FlexModule,
+    InfiniteScrollModule
   ]
 })
 export class SearchModule { }
