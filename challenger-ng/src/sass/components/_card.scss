@@ -1,12 +1,12 @@
 .mat-card {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
 
   .mat-card-content {
     position: absolute;
-    z-index: 1000;
+    z-index: 10;
     left: 0;
     right: 0;
     padding: 24px;
