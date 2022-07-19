@@ -16,20 +16,23 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import { environment } from '@environments/environment';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { metaReducers, reducers } from './store/reducers';
 import { appEffects } from './store/effects';
+
+import { challengerRoutes } from './app-routing';
+import { RouterPreloadStrategyService } from './shared/services/router-preload-strategy/router-preload-strategy.service';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     StoreModule.forRoot(reducers, {
       metaReducers
     }),
-    RouterModule.forRoot([]),
+    RouterModule.forRoot(challengerRoutes, {
+      preloadingStrategy: RouterPreloadStrategyService
+    }),
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot(appEffects),
     BrowserAnimationsModule,
@@ -44,7 +47,7 @@ import { appEffects } from './store/effects';
     MatIconModule,
     MatProgressBarModule
   ],
-  providers: [],
+  providers: [RouterPreloadStrategyService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
