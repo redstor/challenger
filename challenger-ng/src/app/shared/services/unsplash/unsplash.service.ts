@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { createApi } from 'unsplash-js';
 import { ApiResponse } from 'unsplash-js/dist/helpers/response';
 import { from, Observable } from 'rxjs';
-import { Photo, Collection } from '@app/models';
+import { Photo, Collection, Topics } from '@app/models';
 import { EnvironmentService } from '@app/shared/services';
 import { Full } from 'unsplash-js/dist/methods/photos/types';
 import { Photos } from 'unsplash-js/dist/methods/search/types/response';
@@ -48,5 +48,11 @@ export class UnsplashService {
     ApiResponse<Photos>
   > {
     return from(this.api.search.getPhotos(query));
+  }
+
+  listTopics(): Observable<
+    ApiResponse<any>
+  > {
+    return from(this.api.topics.list({}));
   }
 }
