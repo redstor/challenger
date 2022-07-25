@@ -18,6 +18,13 @@ const route: Routes = [
     }
   },
   {
+    path: 'photo/:photoId',
+    component: CollectionPhotoComponent,
+    data: {
+      breadcrumb: 'photo'
+    }
+  },
+  {
     path: 'collection/:collectionId',
     component: CollectionComponent,
     data: {

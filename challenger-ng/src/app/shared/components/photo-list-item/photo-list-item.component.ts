@@ -5,6 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './photo-list-item.component.html'
 })
 export class PhotoListItemComponent {
+  // toDo add some example pictures in case its null/undefined
   @Input() photo_url = '';
   @Input() photo_description = '';
 }

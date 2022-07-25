@@ -17,5 +17,13 @@ export const challengerRoutes: Routes = [
       preload: true,
       delay: 100
     }
+  },
+  {
+    path: 'topics',
+    loadChildren: () => import('./features/topics/topics.module').then(m => m.TopicsModule),
+    data: {
+      preload: true,
+      delay: 150
+    }
   }
 ];

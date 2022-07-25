@@ -1,0 +1,15 @@
+<div class="layout-container">
+  <div class="gallery" fxLayout="column" fxLayout.gt-sm="row wrap">
+    <ng-container *ngFor="let topic of results$ | async">
+      <app-photo-list-item
+        fxFlex
+        fxFlex.gt-sm="28"
+        fxFlex.gt-lg="20"
+        [photo_url]="topic.cover_photo?.urls?.small!"
+        [photo_description]="topic.cover_photo?.description!"
+      >
+        <p class="title">{{ topic.title }}</p>
+      </app-photo-list-item>
+    </ng-container>
+  </div>
+</div>

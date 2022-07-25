@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { createApi } from 'unsplash-js';
 import { ApiResponse } from 'unsplash-js/dist/helpers/response';
-import { from, Observable } from 'rxjs';
-import { Photo, Collection, CollectionOptions } from '@app/models';
+import { Photo, Collection, CollectionOptions, Topic, TopicOptions, TopicOrderByEnum } from '@app/models';
 import { EnvironmentService } from '@app/shared/services';
 import { Full } from 'unsplash-js/dist/methods/photos/types';
 import { Photos } from 'unsplash-js/dist/methods/search/types/response';
 import { PaginationParams } from 'unsplash-js/dist/types/request';
+// improved tree shaking
+import { Observable } from 'rxjs/internal/Observable';
+import { from } from 'rxjs/internal/observable/from';
 
 @Injectable({
   providedIn: 'root'
@@ -47,5 +49,18 @@ export class UnsplashService {
 
   searchPhotos(query: { query: string } & Pick<PaginationParams, 'page' | 'perPage'>): Observable<ApiResponse<Photos>> {
     return from(this.api.search.getPhotos(query));
+  }
+
+  listTopics(
+    page: number = 1,
+    perPage: number = TopicOptions.perPage,
+    orderBy: TopicOrderByEnum = TopicOptions.orderBy
+  ): Observable<
+    ApiResponse<{
+      results: Topic[];
+      total: number;
+    }>
+  > {
+    return from(this.api.topics.list({ page, perPage, orderBy }));
   }
 }

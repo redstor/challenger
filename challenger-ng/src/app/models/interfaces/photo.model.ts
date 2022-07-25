@@ -2,16 +2,16 @@ export interface Photo {
   id: string;
   width: number;
   height: number;
-  color: string;
+  color: string | null;
   description: string | null;
-  alt_description: string;
+  alt_description: string | null;
   urls: {
     raw: string;
     full: string;
     regular: string;
     small: string;
     thumb: string;
-    small_s3: string;
+    small_s3?: string;
   };
   links: {
     self: string;
@@ -24,15 +24,15 @@ export interface Photo {
     username: string;
     name: string;
     first_name: string;
-    last_name: string;
+    last_name: string | null;
     profile_image: {
       large: string;
       medium: string;
       small: string;
     };
-    portfolio_url: string;
-    location: string;
+    portfolio_url: string | null;
+    location: string | null;
   };
   likes: number;
-  views: number;
+  views?: number;
 }
