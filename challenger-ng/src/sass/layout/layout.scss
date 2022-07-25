@@ -94,3 +94,26 @@
     color: $error-color;
   }
 }
+
+.stats-view {
+  background-color: white;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.14), 0 8px 8px 0 rgba(0, 0, 0, 0.12) !important;
+  text-transform: capitalize;
+  text-align: center;
+
+  &__header {
+    font-size: 18px;
+  }
+
+  &__content {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}

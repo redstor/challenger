@@ -1,0 +1,13 @@
+<div class="layout-container">
+  <div class="gallery" fxLayout="column" fxLayout.gt-sm="row wrap">
+    <app-stat-view
+      *ngFor="let stat of results$ | async"
+      fxFlex
+      fxFlex
+      fxFlex.gt-sm="28"
+      fxFlex.gt-lg="20"
+      [title]="stat.title"
+      [amount]="stat.number"
+    ></app-stat-view>
+  </div>
+</div>

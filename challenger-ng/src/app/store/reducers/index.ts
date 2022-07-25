@@ -7,6 +7,7 @@ import * as fromPhotos from './photos/photos.reducer';
 import * as fromPhoto from './photo/photo.reducer';
 import * as fromSearch from './search/search.reducer';
 import * as fromTopics from './topics/topics.reducer';
+import * as fromStats from './stats/stats.reducer';
 
 export interface State {
   appContext: fromAppContext.State;
@@ -15,6 +16,7 @@ export interface State {
   photo: fromPhoto.State;
   search: fromSearch.State;
   topics: fromTopics.State;
+  stats: fromStats.State;
   router: RouterReducerState<any>;
 }
 
@@ -25,6 +27,7 @@ export const reducers: ActionReducerMap<State> = {
   photo: fromPhoto.reducer,
   search: fromSearch.reducer,
   topics: fromTopics.reducer,
+  stats: fromStats.reducer,
   router: routerReducer
 };
 

@@ -1,7 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { createApi } from 'unsplash-js';
 import { ApiResponse } from 'unsplash-js/dist/helpers/response';
-import { Photo, Collection, CollectionOptions, Topic, TopicOptions, TopicOrderByEnum } from '@app/models';
+import { Photo, Collection, CollectionOptions, Topic, TopicOptions, TopicOrderByEnum, Stats } from '@app/models';
 import { EnvironmentService } from '@app/shared/services';
 import { Full } from 'unsplash-js/dist/methods/photos/types';
 import { Photos } from 'unsplash-js/dist/methods/search/types/response';
@@ -9,6 +10,11 @@ import { PaginationParams } from 'unsplash-js/dist/types/request';
 // improved tree shaking
 import { Observable } from 'rxjs/internal/Observable';
 import { from } from 'rxjs/internal/observable/from';
+import { RequestService } from './../request/request.service';
+import { map } from 'rxjs/internal/operators/map';
+import { environment } from '@environments/environment';
+import { catchError } from 'rxjs/internal/operators/catchError';
+import { of } from 'rxjs/internal/observable/of';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +22,7 @@ import { from } from 'rxjs/internal/observable/from';
 export class UnsplashService {
   api;
 
-  constructor(environment: EnvironmentService) {
+  constructor(environment: EnvironmentService, private requestService: RequestService) {
     this.api = createApi({
       accessKey: environment.unsplashAccessKey
     });
@@ -62,5 +68,20 @@ export class UnsplashService {
     }>
   > {
     return from(this.api.topics.list({ page, perPage, orderBy }));
+  }
+
+  listStats(): Observable<
+    ApiResponse<{
+      results: Stats;
+    }>
+  > {
+    return this.requestService.get(environment.unsplash.url + '/stats/total').pipe(
+      map(
+        res =>
+          ({ type: 'success', status: 200, originalResponse: res, response: { results: res } } as ApiResponse<{
+            results: Stats;
+          }>)
+      )
+    );
   }
 }

@@ -3,7 +3,8 @@ export enum RouteTypes {
   collection = 'collection',
   photo = 'photo',
   search = 'search',
-  topics = 'topics'
+  topics = 'topics',
+  stats = 'stats'
 }
 
 export const EnableRoutes: RouteTypes[] = [
@@ -11,5 +12,6 @@ export const EnableRoutes: RouteTypes[] = [
   RouteTypes.collection,
   RouteTypes.photo,
   RouteTypes.search,
-  RouteTypes.topics
+  RouteTypes.topics,
+  RouteTypes.stats
 ];

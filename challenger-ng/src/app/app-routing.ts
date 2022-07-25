@@ -25,5 +25,13 @@ export const challengerRoutes: Routes = [
       preload: true,
       delay: 150
     }
+  },
+  {
+    path: 'stats',
+    loadChildren: () => import('./features/stats/stats.module').then(m => m.StasModule),
+    data: {
+      preload: true,
+      delay: 200
+    }
   }
 ];

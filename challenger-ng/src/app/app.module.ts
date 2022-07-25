@@ -24,6 +24,7 @@ import { appEffects } from './store/effects';
 import { challengerRoutes } from './app-routing';
 import { RouterPreloadStrategyService } from './shared/services/router-preload-strategy/router-preload-strategy.service';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, BreadcrumbsComponent],
@@ -48,7 +49,8 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
     MatButtonModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule
   ],
   providers: [RouterPreloadStrategyService],
   bootstrap: [AppComponent]

@@ -17,7 +17,6 @@ import { MatInputModule } from '@angular/material/input';
   imports: [
     CommonModule,
     MatCardModule,
-    MatCardModule,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,

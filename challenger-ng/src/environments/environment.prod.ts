@@ -3,6 +3,7 @@ import { IEnvironment } from '@environments/environment.model';
 export const environment: IEnvironment = {
   production: true,
   unsplash: {
-    accessKey: 'UNSPLASH_ACCESS_KEY'
+    accessKey: 'UNSPLASH_ACCESS_KEY',
+    url: 'UNSPLASH_URL'
   }
 };
