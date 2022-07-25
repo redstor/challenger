@@ -19,11 +19,16 @@ export class PhotoEffects {
         return !id
           ? of(PhotoActions.loadPhotoFailure())
           : this.unsplash.getPhoto(id).pipe(
-              map(result =>
-                result.type === 'success'
+              map(result => {
+                const success = result.type === 'success';
+
+                // toDo change to catch array of errors
+                !success && this.store.dispatch(AppContextActions.setError({ error: result.errors[0], from: 'photo' }));
+
+                return success
                   ? PhotoActions.loadPhotoSuccess({ photo: result.response as unknown as Photo })
-                  : PhotoActions.loadPhotoFailure()
-              ),
+                  : PhotoActions.loadPhotoFailure();
+              }),
               finalize(() => this.store.dispatch(AppContextActions.setLoaded()))
             );
       })

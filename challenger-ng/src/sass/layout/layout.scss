@@ -83,3 +83,14 @@
     }
   }
 }
+
+.toast {
+  &__success {
+    background-color: $success-bg;
+    color: $success-color;
+  }
+  &__error {
+    background-color: $error-bg;
+    color: $error-color;
+  }
+}

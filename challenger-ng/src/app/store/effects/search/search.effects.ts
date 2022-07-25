@@ -40,7 +40,13 @@ export class SearchEffects {
           ? this.unsplash.searchPhotos({ query: state.lastSearch, page: state.currentPage + 1 }).pipe(
               mergeMap(result => {
                 this.store.dispatch(AppContextActions.setLoaded());
-                return result.type === 'success'
+
+                const success = result.type === 'success';
+
+                // toDo change to catch array of errors
+                !success && this.store.dispatch(AppContextActions.setError({ error: result.errors[0], from: 'search' }));
+
+                return success
                   ? of(
                       SearchActions.addPhotos({
                         photosResult: result.response.results

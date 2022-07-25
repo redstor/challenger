@@ -19,7 +19,12 @@ export class PhotosEffects {
           ? of(PhotosActions.loadPhotosFailure())
           : this.unsplash.listCollectionPhotos(id).pipe(
               map(result => {
-                return result.type === 'success'
+                const success = result.type === 'success';
+
+                // toDo change to catch array of errors
+                !success && this.store.dispatch(AppContextActions.setError({ error: result.errors[0], from: 'photos' }));
+
+                return success
                   ? PhotosActions.loadPhotosSuccess({
                       collectionId: id,
                       photos: result.response.results
