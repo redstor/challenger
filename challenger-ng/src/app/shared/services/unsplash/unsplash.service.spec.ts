@@ -1,3 +1,4 @@
+import { RequestService } from './../request/request.service';
 import { TestBed } from '@angular/core/testing';
 
 import { UnsplashService } from '../unsplash/unsplash.service';
@@ -5,9 +6,12 @@ import { firstValueFrom } from 'rxjs';
 
 describe('UnsplashService', () => {
   let service: UnsplashService;
+  let MockRequestService = jasmine.createSpyObj('RequestService', {
+    get: Promise.resolve()
+  });
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({ providers: [{ provide: RequestService, useValue: MockRequestService }] });
     service = TestBed.inject(UnsplashService);
   });
 

@@ -1,4 +1,3 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { createApi } from 'unsplash-js';
 import { ApiResponse } from 'unsplash-js/dist/helpers/response';
@@ -13,8 +12,6 @@ import { from } from 'rxjs/internal/observable/from';
 import { RequestService } from './../request/request.service';
 import { map } from 'rxjs/internal/operators/map';
 import { environment } from '@environments/environment';
-import { catchError } from 'rxjs/internal/operators/catchError';
-import { of } from 'rxjs/internal/observable/of';
 
 @Injectable({
   providedIn: 'root'

@@ -1,5 +1,8 @@
 import { TestBed } from '@angular/core/testing';
+import { UnsplashService } from '@app/shared/services';
+import MockUnsplashService from '@app/shared/services/unsplash/unsplash.mock.service';
 import { provideMockActions } from '@ngrx/effects/testing';
+import { provideMockStore } from '@ngrx/store/testing';
 import { Observable } from 'rxjs';
 import { StatsEffects } from './stats.effects';
 
@@ -9,7 +12,12 @@ describe('StatsEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [StatsEffects, provideMockActions(() => actions$)]
+      providers: [
+        StatsEffects,
+        provideMockStore(),
+        provideMockActions(() => actions$),
+        { provide: UnsplashService, useValue: MockUnsplashService }
+      ]
     });
 
     effects = TestBed.inject(StatsEffects);

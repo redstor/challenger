@@ -1,4 +1,6 @@
 import { TestBed } from '@angular/core/testing';
+import { UnsplashService } from '@app/shared/services';
+import MockUnsplashService from '@app/shared/services/unsplash/unsplash.mock.service';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { provideMockStore } from '@ngrx/store/testing';
 import { Observable } from 'rxjs';
@@ -14,7 +16,8 @@ describe('SearchEffects', () => {
       providers: [
         SearchEffects,
         provideMockActions(() => actions$),
-        provideMockStore()
+        provideMockStore(),
+        { provide: UnsplashService, useValue: MockUnsplashService }
       ]
     });
 

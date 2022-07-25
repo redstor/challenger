@@ -3,6 +3,8 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
 import { PhotosEffects } from './photos.effects';
 import { provideMockStore } from '@ngrx/store/testing';
+import { UnsplashService } from '@app/shared/services/unsplash/unsplash.service';
+import MockUnsplashService from '@app/shared/services/unsplash/unsplash.mock.service';
 
 describe('PhotosEffects', () => {
   let actions$: Observable<any>;
@@ -10,7 +12,12 @@ describe('PhotosEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PhotosEffects, provideMockStore(), provideMockActions(() => actions$)]
+      providers: [
+        PhotosEffects,
+        provideMockStore(),
+        provideMockActions(() => actions$),
+        { provide: UnsplashService, useValue: MockUnsplashService }
+      ]
     });
 
     effects = TestBed.inject(PhotosEffects);
