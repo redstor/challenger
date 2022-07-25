@@ -1,7 +1,9 @@
+import { State } from '@app/store/reducers/app-context/app-context.reducer';
 import { Injectable } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { AppContextSelectors } from '@app/store/selectors';
 import { Store } from '@ngrx/store';
+import { filter } from 'rxjs/internal/operators/filter';
 
 @Injectable({
   providedIn: 'root'
@@ -17,11 +19,14 @@ export class ToastService {
   constructor(private snackBar: MatSnackBar, private store: Store) {}
 
   initService() {
-    this.store.select(AppContextSelectors.selectErrors).subscribe(this.processError.bind(this));
+    this.store
+      .select(AppContextSelectors.selectErrors)
+      .pipe(filter(error => !!error))
+      .subscribe(this.processError.bind(this));
   }
 
-  private processError({ message }: any) {
-    this.showError(message);
+  private processError(error: { message: string; from: string } | null) {
+    error?.message && this.showError(error?.message);
   }
 
   showSuccess(message: string, title?: string) {

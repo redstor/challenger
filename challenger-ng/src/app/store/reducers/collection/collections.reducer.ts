@@ -6,13 +6,15 @@ export const collectionsFeatureKey = 'collections';
 
 export interface State {
   collections: ReadonlyArray<Collection>;
+  total: number;
 }
 
 export const initialState: State = {
-  collections: []
+  collections: [],
+  total: 0
 };
 
 export const reducer = createReducer(
   initialState,
-  on(CollectionActions.loadCollectionsSuccess, (state, { collections }) => ({ ...state, collections }))
+  on(CollectionActions.loadCollectionsSuccess, (state, { collections, total }) => ({ ...state, collections, total }))
 );

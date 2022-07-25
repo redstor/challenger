@@ -5,3 +5,7 @@ export interface Collection {
   title: string;
   cover_photo: Photo;
 }
+
+export const CollectionOptions = {
+  perPage: 10
+};
