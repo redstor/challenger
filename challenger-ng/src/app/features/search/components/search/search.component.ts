@@ -16,16 +16,18 @@ export class SearchComponent {
   });
   results$: Observable<ReadonlyArray<PhotoSearch>> = this.store.pipe(select(SearchSelectors.selectSearchResult));
 
-  constructor(private store: Store) { }
+  constructor(private store: Store) {}
 
   newSearch() {
-    this.store.dispatch(SearchActions.newSearch({ searchKey: this.searchForm.value.search }));
+    this.store.dispatch(SearchActions.newSearch({ searchKey: this.searchForm.value.search ?? '' }));
   }
 
   onScrollDown(): void {
-    this.results$.pipe(
-      take(1),
-      filter(arr => arr && arr.length > 0)
-    ).subscribe(() => this.store.dispatch(SearchActions.loadMoreSearchItems()));
+    this.results$
+      .pipe(
+        take(1),
+        filter(arr => arr && arr.length > 0)
+      )
+      .subscribe(() => this.store.dispatch(SearchActions.loadMoreSearchItems()));
   }
 }

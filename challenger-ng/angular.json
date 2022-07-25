@@ -117,8 +117,10 @@
       }
     }
   },
-  "defaultProject": "challenge",
   "cli": {
-    "defaultCollection": "@ngrx/schematics"
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ],
+    "analytics": "6349a17b-f471-4b98-b04c-3b8f8107a7d5"
   }
 }
