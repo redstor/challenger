@@ -7,10 +7,10 @@
 
   <div class="gallery" fxLayout="column" fxLayout.gt-sm="row wrap">
     <ng-container *ngFor="let collection of collections$ | async">
-      <app-photo-list-item 
-        fxFlex fxFlex.gt-sm="28" fxFlex.gt-lg="20" 
+      <app-photo-list-item
+        fxFlex fxFlex.gt-sm="28" fxFlex.gt-lg="20"
         [photo_url]="collection.cover_photo.urls.small"
-        [photo_description]="collection.cover_photo.description" 
+        [photo_description]="collection.cover_photo.description ?? ''"
         [routerLink]="'/collections/collection/'+collection.id"
       >
         <p class="title">{{collection.title}}</p>

@@ -3,7 +3,7 @@ export interface Photo {
   width: number;
   height: number;
   color: string;
-  description: string;
+  description: string | null;
   alt_description: string;
   urls: {
     raw: string;
@@ -29,7 +29,7 @@ export interface Photo {
       large: string;
       medium: string;
       small: string;
-    }
+    };
     portfolio_url: string;
     location: string;
   };
