@@ -8,7 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -22,9 +22,10 @@ import { appEffects } from './store/effects';
 
 import { challengerRoutes } from './app-routing';
 import { RouterPreloadStrategyService } from './shared/services/router-preload-strategy/router-preload-strategy.service';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, BreadcrumbsComponent],
   imports: [
     BrowserModule,
     StoreModule.forRoot(reducers, {
@@ -45,7 +46,7 @@ import { RouterPreloadStrategyService } from './shared/services/router-preload-s
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatProgressBarModule
+    MatProgressSpinnerModule
   ],
   providers: [RouterPreloadStrategyService],
   bootstrap: [AppComponent]

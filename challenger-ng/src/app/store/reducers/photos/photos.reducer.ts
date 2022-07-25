@@ -20,5 +20,8 @@ export const reducer = createReducer(
     ...state,
     collectionId: collectionId,
     photos: photos
+  })),
+  on(PhotosActions.restorePhotos, () => ({
+    ...initialState
   }))
 );

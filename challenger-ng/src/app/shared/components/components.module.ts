@@ -6,15 +6,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FlexModule } from '@angular/flex-layout';
-
+import { SearchInputComponent } from './search-input/search-input.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
-  declarations: [
-    PhotoListItemComponent,
-    PhotoComponent
-  ],
+  declarations: [PhotoListItemComponent, PhotoComponent, SearchInputComponent],
   imports: [
     CommonModule,
     MatCardModule,
@@ -22,12 +21,11 @@ import { FlexModule } from '@angular/flex-layout';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatProgressBarModule,
-    FlexModule
+    FlexModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
-  exports: [
-    PhotoListItemComponent,
-    PhotoComponent
-  ]
+  exports: [PhotoListItemComponent, PhotoComponent, SearchInputComponent]
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

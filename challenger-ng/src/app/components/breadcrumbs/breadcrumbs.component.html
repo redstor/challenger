@@ -1,0 +1,5 @@
+<div class="breadcrumbs">
+  <a *ngFor="let route of routes" [class.active]="selected === route" (click)="handleGoto(route)">
+    <span>{{ route | titlecase }}</span>
+  </a>
+</div>

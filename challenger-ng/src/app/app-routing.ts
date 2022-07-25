@@ -4,7 +4,11 @@ export const challengerRoutes: Routes = [
   { path: '', redirectTo: '/collections', pathMatch: 'full' },
   {
     path: 'collections',
-    loadChildren: () => import('./features/collections/collections.module').then(m => m.CollectionsModule)
+    loadChildren: () => import('./features/collections/collections.module').then(m => m.CollectionsModule),
+    data: {
+      preload: true,
+      delay: 50
+    }
   },
   {
     path: 'search',
