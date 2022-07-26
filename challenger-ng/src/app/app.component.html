@@ -7,8 +7,10 @@
       <a mat-button [routerLink]="'search'">Search</a>
       <a mat-button [routerLink]="'stats'">Stats</a>
     </div>
+    <div><ng-container #language></ng-container></div>
   </mat-toolbar-row>
 </mat-toolbar>
+
 <app-breadcrumbs></app-breadcrumbs>
 <div [hidden]="!loading"><ng-container #loader></ng-container></div>
 <router-outlet></router-outlet>

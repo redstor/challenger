@@ -24,7 +24,14 @@ import { appEffects } from './store/effects';
 import { challengerRoutes } from './app-routing';
 import { RouterPreloadStrategyService } from './shared/services/router-preload-strategy/router-preload-strategy.service';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+// required for AOT compilation
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [AppComponent, BreadcrumbsComponent],
@@ -50,7 +57,15 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    // ngx-translate and the loader module
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [RouterPreloadStrategyService],
   bootstrap: [AppComponent]

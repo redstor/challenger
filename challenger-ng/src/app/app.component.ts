@@ -14,7 +14,10 @@ import { filter } from 'rxjs/internal/operators/filter';
 })
 export class AppComponent implements OnInit {
   @ViewChild('loader', { read: ViewContainerRef })
-  dynamicContainer!: ViewContainerRef;
+  loaderContainer!: ViewContainerRef;
+  @ViewChild('language', { read: ViewContainerRef })
+  languageContainer!: ViewContainerRef;
+
   loading: boolean = true;
 
   constructor(
@@ -27,6 +30,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadLoader();
+    this.loadLanguage();
     this.store.select(AppContextSelectors.isLoading).subscribe(this.processLoader.bind(this));
     this.router.events.pipe(filter(event => event instanceof NavigationStart)).subscribe(() => this.processLoader(true));
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => this.processLoader(false));
@@ -41,6 +45,13 @@ export class AppComponent implements OnInit {
   private async loadLoader() {
     const { LoaderComponent, LoaderModule } = await import('./components/loader/loader.component');
     const moduleRef = await this.moduleLoaderService.loadModule(LoaderModule);
-    this.dynamicContainer?.createComponent(LoaderComponent, { ngModuleRef: moduleRef });
+    this.loaderContainer?.createComponent(LoaderComponent, { ngModuleRef: moduleRef });
+  }
+
+  private async loadLanguage() {
+    const { LanguageComponent, LanguageModule } = await import('./components/language/language.component');
+    const moduleRef = await this.moduleLoaderService.loadModule(LanguageModule);
+    this.languageContainer?.createComponent(LanguageComponent, { ngModuleRef: moduleRef });
+    this.cdr.detectChanges();
   }
 }

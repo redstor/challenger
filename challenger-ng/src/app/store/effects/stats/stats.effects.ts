@@ -14,7 +14,6 @@ export class StatsEffects {
         this.store.dispatch(AppContextActions.setLoading());
         return this.unsplash.listStats().pipe(
           map(result => {
-            console.log('results', result);
             const success = result.type === 'success';
 
             // toDo change to catch array of errors
