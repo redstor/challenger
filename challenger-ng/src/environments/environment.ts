@@ -4,8 +4,8 @@ import { IEnvironment } from '@environments/environment.model';
 export const environment: IEnvironment = {
   production: false,
   unsplash: {
-    // provide add your access key here
-    accessKey: 'IB64RUphpKg5-fMIoRGaQeaZns549D4nzW-XyVxywYQ',
-    url: 'https://api.unsplash.com'
+    // toDo create a .env variable to add the key needed
+    accessKey: 'UNSPLASH_ACCESS_KEY',
+    url: 'UNSPLASH_URL'
   }
 };
