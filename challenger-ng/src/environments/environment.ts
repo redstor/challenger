@@ -4,8 +4,8 @@ import { IEnvironment } from '@environments/environment.model';
 export const environment: IEnvironment = {
   production: false,
   unsplash: {
-    // toDo create a .env variable to add the key needed
+    // add your access key here and remember to remove it before you create a pull request
     accessKey: 'UNSPLASH_ACCESS_KEY',
-    url: 'UNSPLASH_URL'
+    url: 'https://api.unsplash.com'
   }
 };

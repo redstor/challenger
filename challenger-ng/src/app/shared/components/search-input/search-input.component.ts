@@ -25,12 +25,12 @@ export class SearchInputComponent implements OnInit, OnDestroy {
     this.subscriptions.add(
       this.searchForm.controls?.['search']?.valueChanges
         .pipe(debounceTime(400), distinctUntilChanged())
-        .subscribe(value => this.newSearch.emit(value))
+        .subscribe(value => this.newSearch.emit(value ?? ''))
     );
   }
 
   handleEnter() {
-    this.newSearch.emit(this.searchForm.controls?.['search']?.value);
+    this.newSearch.emit(this.searchForm.controls?.['search']?.value ?? '');
   }
 
   ngOnDestroy(): void {
