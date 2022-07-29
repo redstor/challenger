@@ -1,24 +1,29 @@
-<div class="breadcrumbs">
-  <a class="active"><span>Search</span></a>
-</div>
-
 <div class="layout-container">
-  <form class="search-form" [formGroup]="searchForm" (keyup.enter)="newSearch()">
-    <mat-form-field appearance="outline">
-      <mat-icon matSuffix>search</mat-icon>
-      <input matInput type="text" formControlName="search" placeholder="search a photo...">
-    </mat-form-field>
-  </form>
+  <app-search-input (newSearch)="handleSearch($event)"></app-search-input>
 
-  <mat-progress-bar *ngIf="(results$ | async) === undefined"></mat-progress-bar>
-
-  <div class="gallery" fxLayout.sm="column" fxLayout.gt-sm="row wrap" infiniteScroll [infiniteScrollDistance]="1"
-    [infiniteScrollThrottle]="2000" (scrolled)="onScrollDown()">
+  <div
+    class="gallery"
+    fxLayout.sm="column"
+    fxLayout.gt-sm="row wrap"
+    infiniteScroll
+    [infiniteScrollDistance]="1"
+    [infiniteScrollThrottle]="2000"
+    (scrolled)="onScrollDown()"
+  >
     <ng-container *ngFor="let photo of results$ | async">
-      <app-photo-list-item fxFlex fxFlex.gt-sm="28" fxFlex.gt-lg="20" [photo_url]="photo.urls.small"
-        [photo_description]="photo.alt_description!">
+      <app-photo-list-item
+        fxFlex
+        fxFlex.gt-sm="28"
+        fxFlex.gt-lg="20"
+        [photo_url]="photo.urls.small"
+        [photo_description]="photo.alt_description!"
+        [routerLink]="'/collections/photo/' + photo.id"
+      >
         <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="12px">
-          <p><mat-icon inline>favorite</mat-icon>{{photo.likes}} likes </p>
+          <p>
+            <mat-icon inline>favorite</mat-icon>
+            {{ photo.likes }} likes
+          </p>
         </div>
       </app-photo-list-item>
     </ng-container>

@@ -4,30 +4,44 @@ import { RouterModule, Routes } from '@angular/router';
 import { CollectionListComponent } from './components/collection-list/collection-list.component';
 import { CollectionComponent } from './components/collection/collection.component';
 import { ComponentsModule } from '@app/shared/components/components.module';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FlexModule } from '@angular/flex-layout';
 import { CollectionPhotoComponent } from './components/collection-photo/collection-photo.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 const route: Routes = [
-  { path: '', component: CollectionListComponent },
-  { path: 'collection/:collectionId', component: CollectionComponent },
-  { path: 'collection/:collectionId/photo/:photoId', component: CollectionPhotoComponent }
+  {
+    path: '',
+    component: CollectionListComponent,
+    data: {
+      breadcrumb: 'collections'
+    }
+  },
+  {
+    path: 'photo/:photoId',
+    component: CollectionPhotoComponent,
+    data: {
+      breadcrumb: 'photo'
+    }
+  },
+  {
+    path: 'collection/:collectionId',
+    component: CollectionComponent,
+    data: {
+      breadcrumb: 'collection'
+    }
+  },
+  {
+    path: 'collection/:collectionId/photo/:photoId',
+    component: CollectionPhotoComponent,
+    data: {
+      breadcrumb: 'photo'
+    }
+  }
 ];
 
 @NgModule({
-  declarations: [
-    CollectionListComponent,
-    CollectionComponent,
-    CollectionPhotoComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(route),
-    ComponentsModule,
-    MatProgressBarModule,
-    MatIconModule,
-    FlexModule
-  ]
+  declarations: [CollectionListComponent, CollectionComponent, CollectionPhotoComponent],
+  imports: [CommonModule, RouterModule.forChild(route), ComponentsModule, MatIconModule, FlexModule, MatPaginatorModule]
 })
-export class CollectionsModule { }
+export class CollectionsModule {}

@@ -1,0 +1,6 @@
+<form class="search-form" [formGroup]="searchForm" (keyup.enter)="handleEnter()">
+  <mat-form-field appearance="outline">
+    <mat-icon matSuffix>{{ icon || 'search' }}</mat-icon>
+    <input matInput type="text" formControlName="search" [attr.placeholder]="placeholder || 'search a photo...'" />
+  </mat-form-field>
+</form>

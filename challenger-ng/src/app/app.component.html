@@ -1,10 +1,16 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>Challenger</span>
+    <a mat-button [routerLink]="'/'">Challenger</a>
     <div>
       <a mat-button [routerLink]="'collections'">Collections</a>
+      <a mat-button [routerLink]="'topics'">Topics</a>
       <a mat-button [routerLink]="'search'">Search</a>
+      <a mat-button [routerLink]="'stats'">Stats</a>
     </div>
+    <div><ng-container #language></ng-container></div>
   </mat-toolbar-row>
 </mat-toolbar>
+
+<app-breadcrumbs></app-breadcrumbs>
+<div [hidden]="!loading"><ng-container #loader></ng-container></div>
 <router-outlet></router-outlet>

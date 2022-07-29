@@ -5,3 +5,8 @@ export interface Collection {
   title: string;
   cover_photo: Photo;
 }
+
+// toDo move to types same as topics
+export const CollectionOptions = {
+  perPage: 10
+};
