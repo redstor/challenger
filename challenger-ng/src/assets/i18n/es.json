@@ -24,12 +24,12 @@
     }
   },
   "paginator": {
-    "itemsPerPageLabel": "ES Items per page:",
-    "firstPageLabel": "ES First page",
-    "lastPageLabel": "ES Last page",
-    "nextPageLabel": "ES Next page",
-    "previousPageLabel": "ES Previous page",
-    "range_start": "ES 0 of {{length}}",
-    "range": "ES {{startIndex}} - {{endIndex}} of {{length}}"
+    "itemsPerPageLabel": "Elementos por página:",
+    "firstPageLabel": "Primera página",
+    "lastPageLabel": "Ultima página",
+    "nextPageLabel": "Próxima página",
+    "previousPageLabel": "Página anterior",
+    "range_empty": "0 de {{length}}",
+    "range": "{{startIndex}} - {{endIndex}} de {{length}}"
   }
 }

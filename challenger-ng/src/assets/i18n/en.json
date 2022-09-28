@@ -29,7 +29,7 @@
     "lastPageLabel": "Last page",
     "nextPageLabel": "Next page",
     "previousPageLabel": "Previous page",
-    "range_start": "0 of {{length}}",
+    "range_empty": "0 of {{length}}",
     "range": "{{startIndex}} - {{endIndex}} of {{length}}"
   }
 }
