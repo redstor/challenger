@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ComponentsModule } from '@app/shared/components/components.module';
 import { FlexModule } from '@angular/flex-layout';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 const routes: Routes = [
   {
@@ -19,6 +20,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [TopicsComponent],
-  imports: [CommonModule, ComponentsModule, RouterModule.forChild(routes), MatIconModule, FlexModule, InfiniteScrollModule]
+  imports: [CommonModule, ComponentsModule, RouterModule.forChild(routes), MatIconModule, FlexModule, InfiniteScrollModule, MatPaginatorModule]
 })
 export class TopicsModule {}

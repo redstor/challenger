@@ -1,4 +1,6 @@
 <div class="layout-container">
+  <mat-paginator [length]="total$ | async" [pageSize]="pageSize" (page)="loadTopics($event)"></mat-paginator>
+
   <div class="gallery" fxLayout="column" fxLayout.gt-sm="row wrap">
     <ng-container *ngFor="let topic of results$ | async">
       <app-photo-list-item
