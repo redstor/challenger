@@ -6,5 +6,30 @@
     "search": "Buscar",
     "topics": "Temas",
     "stats": "Estadísticas"
+  },
+  "menu": {
+    "challenger": "Desafío",
+    "collections": "Colecciones",
+    "topics": "Foto",
+    "search": "Buscar",
+    "stats": "Estadísticas"
+  },
+  "language": {
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "components": {
+    "search-input": {
+      "placeholder": "Busca una foto..."
+    }
+  },
+  "paginator": {
+    "itemsPerPageLabel": "ES Items per page:",
+    "firstPageLabel": "ES First page",
+    "lastPageLabel": "ES Last page",
+    "nextPageLabel": "ES Next page",
+    "previousPageLabel": "ES Previous page",
+    "range_start": "ES 0 of {{length}}",
+    "range": "ES {{startIndex}} - {{endIndex}} of {{length}}"
   }
 }

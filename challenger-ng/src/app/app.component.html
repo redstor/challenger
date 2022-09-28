@@ -1,11 +1,11 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <a mat-button [routerLink]="'/'">Challenger</a>
+    <a mat-button [routerLink]="'/'">{{ "menu.challenger" | translate }}</a>
     <div>
-      <a mat-button [routerLink]="'collections'">Collections</a>
-      <a mat-button [routerLink]="'topics'">Topics</a>
-      <a mat-button [routerLink]="'search'">Search</a>
-      <a mat-button [routerLink]="'stats'">Stats</a>
+      <a mat-button [routerLink]="'collections'">{{ "menu.collections" | translate }}</a>
+      <a mat-button [routerLink]="'topics'">{{ "menu.topics" | translate }}</a>
+      <a mat-button [routerLink]="'search'">{{ "menu.search" | translate }}</a>
+      <a mat-button [routerLink]="'stats'">{{ "menu.stats" | translate }}</a>
     </div>
     <div><ng-container #language></ng-container></div>
   </mat-toolbar-row>

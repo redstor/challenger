@@ -1,5 +1,5 @@
 <form class="language" [formGroup]="languageForm">
   <mat-select formControlName="language">
-    <mat-option *ngFor="let lang of enableLangs" [value]="lang.value">{{ lang.label }}</mat-option>
+    <mat-option *ngFor="let lang of enableLangs" [value]="lang.value">{{ "language." + lang.label | translate }}</mat-option>
   </mat-select>
 </form>

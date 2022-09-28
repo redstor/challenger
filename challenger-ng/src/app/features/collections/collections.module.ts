@@ -42,6 +42,6 @@ const route: Routes = [
 
 @NgModule({
   declarations: [CollectionListComponent, CollectionComponent, CollectionPhotoComponent],
-  imports: [CommonModule, RouterModule.forChild(route), ComponentsModule, MatIconModule, FlexModule, MatPaginatorModule]
+  imports: [CommonModule, RouterModule.forChild(route), ComponentsModule, MatIconModule, FlexModule, MatPaginatorModule],
 })
 export class CollectionsModule {}

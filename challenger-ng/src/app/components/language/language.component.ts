@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -9,8 +9,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class LanguageComponent implements OnInit, OnDestroy {
   enableLangs: any[] = [
-    { label: 'English', value: 'en' },
-    { label: 'Spanish', value: 'es' }
+    { label: 'english', value: 'en' },
+    { label: 'spanish', value: 'es' }
   ];
   languageForm = new FormGroup({
     language: new FormControl(this.enableLangs[0].value)
@@ -43,7 +43,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule, MatSelectModule, ReactiveFormsModule],
+  imports: [CommonModule, MatSelectModule, ReactiveFormsModule, TranslateModule],
   declarations: [LanguageComponent]
 })
 export class LanguageModule {}

@@ -6,5 +6,30 @@
     "search": "Search",
     "topics": "Topics",
     "stats": "Stats"
+  },
+  "menu": {
+    "challenger": "Challenger",
+    "collections": "Collections",
+    "topics": "Topics",
+    "search": "Search",
+    "stats": "Stats"
+  },
+  "language": {
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "components": {
+    "search-input": {
+      "placeholder": "Search a photo..."
+    }
+  },
+  "paginator": {
+    "itemsPerPageLabel": "Items per page:",
+    "firstPageLabel": "First page",
+    "lastPageLabel": "Last page",
+    "nextPageLabel": "Next page",
+    "previousPageLabel": "Previous page",
+    "range_start": "0 of {{length}}",
+    "range": "{{startIndex}} - {{endIndex}} of {{length}}"
   }
 }
