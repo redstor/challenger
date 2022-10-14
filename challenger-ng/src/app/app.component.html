@@ -1,15 +1,23 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
+    <button mat-button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <mat-icon aria-hidden="false" aria-label="Expand menu" fontIcon="menu"></mat-icon>                      
+    </button>
     <a mat-button [routerLink]="'/'">Challenger</a>
-    <div>
+    <div class="navbar">
       <a mat-button routerLinkActive="mat-accent" [routerLink]="'collections'">Collections</a>
       <a mat-button routerLinkActive="mat-accent" [routerLink]="'topics'">Topics</a>
       <a mat-button routerLinkActive="mat-accent" [routerLink]="'search'">Search</a>
       <a mat-button routerLinkActive="mat-accent" [routerLink]="'stats'">Stats</a>
     </div>
     <div><ng-container #language></ng-container></div>
-    <div class="darkmode-toggle">
-      <a mat-mini-fab color="primary" (click)="toggleDarkMode()"><mat-icon aria-hidden="false" aria-label="Dark mode toggle" fontIcon="mode_night"></mat-icon></a>
+    <div class="themes">
+      <button mat-button type="button" [matMenuTriggerFor]="themeMenu"><mat-icon aria-hidden="false" aria-label="Select theme" fontIcon="expand_more"></mat-icon></button>
+      <mat-menu #themeMenu>
+        <menu mat-menu-item (click)="setTheme('default')">Light</menu>
+        <menu mat-menu-item (click)="setTheme('dark')">Dark</menu>
+        <menu mat-menu-item (click)="setTheme('red')">Red</menu>
+      </mat-menu>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

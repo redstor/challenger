@@ -25,12 +25,9 @@ $default-dark-variants: (
 );
 
 .dark-theme {
-  @include mat.core-color($default-dark-theme);
-  @include mat.button-color($default-dark-theme);
+  @include mat.all-component-themes($default-dark-theme);
   @include layout.theme($default-dark-theme);
 }
-
-html { background-color: black; }
 
 .mat-card.thumbnails .mat-card-content,
 .mat-card .mat-card-content {

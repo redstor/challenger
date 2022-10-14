@@ -19,6 +19,12 @@
     
   }
 
+  .themes {
+    a span {
+      color: mat.get-color-from-palette($secondary-palette);
+    }
+  }
+
   .breadcrumbs {
     background-color: mat.get-color-from-palette($secondary-palette);
     a span {

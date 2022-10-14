@@ -26,9 +26,6 @@ $red-variants: (
 );
 
 .red-theme {
-  @include mat.core-color($red-theme);
-  @include mat.button-color($red-theme);
+  @include mat.all-component-themes($red-theme);
   @include layout.theme($red-theme);
 }
-
-html { background-color: rgb(121, 121, 121); }

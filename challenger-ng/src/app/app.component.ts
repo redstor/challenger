@@ -6,7 +6,8 @@ import { AppContextSelectors } from './store/selectors';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { filter } from 'rxjs/internal/operators/filter';
 
-import { StyleManager } from './shared/services/themes/style-manager.service';
+import { StyleManagerService } from './shared/services/themes/style-manager.service';
+import {MatMenuModule} from '@angular/material/menu';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,6 @@ export class AppComponent implements OnInit {
 
   loading: boolean = true;
 
-  darkSet = false;
 
   constructor(
     private store: Store,
@@ -30,16 +30,11 @@ export class AppComponent implements OnInit {
     private moduleLoaderService: ModuleLoaderService,
     private router: Router,
     private toastService: ToastService,
-    private styleManager: StyleManager
+    private styleManager: StyleManagerService
   ) {}
 
-  toggleDarkMode() {
-    if(!this.darkSet) {
-      this.styleManager.setStyle('dark');
-    } else {
-      this.styleManager.setStyle('');
-    }
-    this.darkSet = !this.darkSet;
+  public setTheme(theme: string) {
+    this.styleManager.setStyle(theme);
   }
 
   ngOnInit(): void {

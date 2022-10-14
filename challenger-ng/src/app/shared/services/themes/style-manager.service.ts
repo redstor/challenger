@@ -1,36 +1,42 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
-export class StyleManager {
-  darkSet = false;
-  curTheme = '';
+export class StyleManagerService {
+  curTheme = 'light-theme';
 
   setStyle(style: string) {
     switch(style) {
+      case "default": {
+        // set default theme
+        const href= 'light-theme.css';
+        this.clearStyle(this.curTheme);
+        getLinkElementForKey('light-theme').setAttribute('href', href);
+        document.body.classList.add('light-theme');
+        document.body.classList.remove(this.curTheme);
+        this.curTheme = 'light-theme';
+        break;
+      }
       case "dark": {
         // set dark mode to be enabled
         const href= 'dark-theme.css';
+        this.clearStyle(this.curTheme);
         getLinkElementForKey('dark-theme').setAttribute('href', href);
         document.body.classList.add('dark-theme');
-        this.darkSet = true;
+        document.body.classList.remove(this.curTheme);
         this.curTheme = 'dark-theme';
         break;
       }
       case "red": {
         // set red theme
         const href= 'red-theme.css';
+        this.clearStyle(this.curTheme);
         getLinkElementForKey('red-theme').setAttribute('href', href);
         document.body.classList.add('red-theme');
-        this.darkSet = false;
+        document.body.classList.remove(this.curTheme);
         this.curTheme = 'red-theme';
         break;
       }
       default: {
-        // clear all mentions of dark mode
-        this.clearStyle('dark-theme');
-        document.body.classList.remove('dark-theme');
-        this.darkSet = false;
-        this.curTheme = '';
         break;
       }
       

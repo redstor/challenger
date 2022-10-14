@@ -5,7 +5,5 @@
 
 
 @include mat.core(typography.$default-typography);
-
-
 @include mat.core-theme(default.$default-theme);
 @include mat.button-theme(default.$default-theme);

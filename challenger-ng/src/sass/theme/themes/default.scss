@@ -25,4 +25,5 @@ $default-variants: (
   info: $default-info,
 );
 
+@include mat.all-component-themes($default-theme);
 @include layout.theme($default-theme);

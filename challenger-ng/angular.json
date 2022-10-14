@@ -33,6 +33,11 @@
             "styles": [
               "src/sass/main.scss",
               {
+                "input": "src/sass/theme/themes/default.scss",
+                "bundleName": "light-theme",
+                "inject": false
+              },
+              {
                 "input": "src/sass/theme/themes/_dark.scss",
                 "bundleName": "dark-theme",
                 "inject": false

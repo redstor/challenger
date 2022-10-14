@@ -20,8 +20,16 @@
   padding: 6px 0;
 }
 
-.darkmode-toggle {
+.themes {
   margin-left: auto;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.mat-menu-panel {
+  background: #ffffff;
+  color: #000000;
 }
 
 .language {
@@ -111,6 +119,7 @@
 
 .stats-view {
   background-color: white;
+  color: black;
   padding: 50px;
   display: flex;
   align-items: center;
