@@ -6,6 +6,8 @@ import { AppContextSelectors } from './store/selectors';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { filter } from 'rxjs/internal/operators/filter';
 
+import { StyleManager } from './shared/services/themes/style-manager.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,13 +22,25 @@ export class AppComponent implements OnInit {
 
   loading: boolean = true;
 
+  darkSet = false;
+
   constructor(
     private store: Store,
     private cdr: ChangeDetectorRef,
     private moduleLoaderService: ModuleLoaderService,
     private router: Router,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private styleManager: StyleManager
   ) {}
+
+  toggleDarkMode() {
+    if(!this.darkSet) {
+      this.styleManager.setStyle('dark');
+    } else {
+      this.styleManager.setStyle('');
+    }
+    this.darkSet = !this.darkSet;
+  }
 
   ngOnInit(): void {
     this.loadLoader();

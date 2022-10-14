@@ -2,12 +2,15 @@
   <mat-toolbar-row>
     <a mat-button [routerLink]="'/'">Challenger</a>
     <div>
-      <a mat-button [routerLink]="'collections'">Collections</a>
-      <a mat-button [routerLink]="'topics'">Topics</a>
-      <a mat-button [routerLink]="'search'">Search</a>
-      <a mat-button [routerLink]="'stats'">Stats</a>
+      <a mat-button routerLinkActive="mat-accent" [routerLink]="'collections'">Collections</a>
+      <a mat-button routerLinkActive="mat-accent" [routerLink]="'topics'">Topics</a>
+      <a mat-button routerLinkActive="mat-accent" [routerLink]="'search'">Search</a>
+      <a mat-button routerLinkActive="mat-accent" [routerLink]="'stats'">Stats</a>
     </div>
     <div><ng-container #language></ng-container></div>
+    <div class="darkmode-toggle">
+      <a mat-mini-fab color="primary" (click)="toggleDarkMode()"><mat-icon aria-hidden="false" aria-label="Dark mode toggle" fontIcon="mode_night"></mat-icon></a>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>
 

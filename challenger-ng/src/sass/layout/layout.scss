@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
 .mat-app-background {
   background-color: #e3e3e3;
 }
@@ -7,6 +10,18 @@
   position: -webkit-sticky;
   top: 0;
   z-index: 1000;
+
+  a {
+    margin: 0 4px;
+  }
+}
+
+.mat-toolbar-multiple-rows {
+  padding: 6px 0;
+}
+
+.darkmode-toggle {
+  margin-left: auto;
 }
 
 .language {
@@ -15,8 +30,6 @@
 }
 
 .breadcrumbs {
-  background-color: rgb(7 174 197 / 20%);
-
   a {
     padding: 0;
     line-height: 36px;
@@ -39,10 +52,6 @@
         cursor: initial;
         font-weight: 500;
       }
-    }
-
-    span {
-      color: #4d4d4d;
     }
   }
 }

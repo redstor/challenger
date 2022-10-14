@@ -31,7 +31,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/sass/main.scss"
+              "src/sass/main.scss",
+              {
+                "input": "src/sass/theme/themes/_dark.scss",
+                "bundleName": "dark-theme",
+                "inject": false
+              },
+              {
+                "input": "src/sass/theme/themes/_red.scss",
+                "bundleName": "red-theme",
+                "inject": false
+              }
             ],
             "scripts": []
           },
@@ -99,8 +109,12 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/sass/main.scss"
+              "src/sass/main.scss",
+              {
+                "input": "src/sass/theme/themes/_dark.scss",
+                "bundleName": "dark-theme",
+                "inject": false
+              }
             ],
             "scripts": []
           }

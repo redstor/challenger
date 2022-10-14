@@ -1,1 +1,11 @@
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+// @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@use "@angular/material" as mat;
+@use "./typography/config" as typography;
+@use "themes/default";
+
+
+@include mat.core(typography.$default-typography);
+
+
+@include mat.core-theme(default.$default-theme);
+@include mat.button-theme(default.$default-theme);
