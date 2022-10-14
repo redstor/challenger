@@ -8,15 +8,21 @@ export class StyleManager {
   setStyle(style: string) {
     switch(style) {
       case "dark": {
-      // set dark mode to be enabled
-      const href= 'dark-theme.css';
-      getLinkElementForKey('dark-theme').setAttribute('href', href);
-      document.body.classList.add('dark-theme');
-      this.darkSet = true;
-      this.curTheme = 'dark-theme';
+        // set dark mode to be enabled
+        const href= 'dark-theme.css';
+        getLinkElementForKey('dark-theme').setAttribute('href', href);
+        document.body.classList.add('dark-theme');
+        this.darkSet = true;
+        this.curTheme = 'dark-theme';
         break;
       }
       case "red": {
+        // set red theme
+        const href= 'red-theme.css';
+        getLinkElementForKey('red-theme').setAttribute('href', href);
+        document.body.classList.add('red-theme');
+        this.darkSet = false;
+        this.curTheme = 'red-theme';
         break;
       }
       default: {
@@ -24,6 +30,7 @@ export class StyleManager {
         this.clearStyle('dark-theme');
         document.body.classList.remove('dark-theme');
         this.darkSet = false;
+        this.curTheme = '';
         break;
       }
       

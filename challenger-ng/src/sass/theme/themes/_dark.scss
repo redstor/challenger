@@ -19,7 +19,6 @@ $default-dark-theme: mat.define-dark-theme(
 
 $default-dark-success: mat.define-palette(mat.$light-green-palette);
 $default-dark-info: mat.define-palette(mat.$light-blue-palette);
-
 $default-dark-variants: (
   success: $default-dark-success,
   info: $default-dark-info,
