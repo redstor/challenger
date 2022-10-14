@@ -4,8 +4,8 @@
 @use "@angular/material" as mat;
 @use "../../layout/layout-theme.scss" as layout;
 
-$default-primary: mat.define-palette(mat.$deep-purple-palette);
-$default-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
+$default-primary: mat.define-palette(mat.$deep-purple-palette, A200, A100, A400);
+$default-accent: mat.define-palette(mat.$amber-palette, 200, A100, A400);
 $default-warn: mat.define-palette(mat.$red-palette);
 $default-theme: mat.define-light-theme(
   (

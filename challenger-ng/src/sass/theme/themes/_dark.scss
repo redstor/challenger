@@ -32,3 +32,8 @@ $default-dark-variants: (
 }
 
 html { background-color: black; }
+
+.mat-card.thumbnails .mat-card-content,
+.mat-card .mat-card-content {
+  background-color: rgba(0, 0, 0, 0.55);
+}
