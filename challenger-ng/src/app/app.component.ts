@@ -7,7 +7,8 @@ import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { filter } from 'rxjs/internal/operators/filter';
 
 import { StyleManagerService } from './shared/services/themes/style-manager.service';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
+import { MenuItem } from './models/interfaces/menu-item.model';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,25 @@ export class AppComponent implements OnInit {
 
   loading: boolean = true;
 
+  navItems: MenuItem[] = [
+    {
+      label: 'Collections',
+      route: 'collections'
+    },
+    {
+      label: 'Topics',
+      route: 'topics'
+    },
+    {
+      label: 'Search',
+      route: 'search'
+    },
+    {
+      label: 'Stats',
+      route: 'stats'
+    }
+  ]
+
 
   constructor(
     private store: Store,
@@ -32,10 +52,6 @@ export class AppComponent implements OnInit {
     private toastService: ToastService,
     private styleManager: StyleManagerService
   ) {}
-
-  public setTheme(theme: string) {
-    this.styleManager.setStyle(theme);
-  }
 
   ngOnInit(): void {
     this.loadLoader();
@@ -62,5 +78,9 @@ export class AppComponent implements OnInit {
     const moduleRef = await this.moduleLoaderService.loadModule(LanguageModule);
     this.languageContainer?.createComponent(LanguageComponent, { ngModuleRef: moduleRef });
     this.cdr.detectChanges();
+  }
+
+  public setTheme(theme: string) {
+    this.styleManager.setStyle(theme);
   }
 }

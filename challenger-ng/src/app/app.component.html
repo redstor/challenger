@@ -1,14 +1,15 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <button mat-button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    <button mat-button type="button" class="navbar-toggle" data-toggle="collapse" [matMenuTriggerFor]="menu">
       <mat-icon aria-hidden="false" aria-label="Expand menu" fontIcon="menu"></mat-icon>                      
     </button>
+    <mat-menu #menu="matMenu" class="res-navbar">
+      <a *ngFor="let item of navItems" mat-flat-button routerLinkActive="mat-accent" [routerLink]="item.route">{{item.label}}</a>
+    </mat-menu>
+
     <a mat-button [routerLink]="'/'">Challenger</a>
     <div class="navbar">
-      <a mat-button routerLinkActive="mat-accent" [routerLink]="'collections'">Collections</a>
-      <a mat-button routerLinkActive="mat-accent" [routerLink]="'topics'">Topics</a>
-      <a mat-button routerLinkActive="mat-accent" [routerLink]="'search'">Search</a>
-      <a mat-button routerLinkActive="mat-accent" [routerLink]="'stats'">Stats</a>
+      <a *ngFor="let item of navItems" mat-button routerLinkActive="mat-accent" [routerLink]="item.route">{{item.label}}</a>
     </div>
     <div><ng-container #language></ng-container></div>
     <div class="themes">

@@ -27,8 +27,38 @@
   align-items: center;
 }
 
-.mat-menu-panel {
-  background: #ffffff;
+@media (min-width: 960px) {
+  .mat-button.navbar-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 959px) {
+  .mat-button.navbar-toggle {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+  }
+}
+
+.res-navbar {
+  flex-direction: column;
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+
+  a {
+    display: block;
+    text-align: left;
+    padding: 12px;
+  }
+}
+
+
+.mat-option span {
   color: #000000;
 }
 
