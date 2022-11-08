@@ -9,12 +9,14 @@
         [photo_description]="photo.alt_description!"
         (click)="handleGotoPhoto(photo)"
       >
+        
         <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="12px">
-          <p>
-            <mat-icon inline>favorite</mat-icon>
-            {{ photo.likes }} likes
-          </p>
+          <h3>{{ photo.user.first_name }} {{ photo.user.last_name }}</h3>
         </div>
+        <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="12px">
+          <p><mat-icon inline>favorite</mat-icon>{{ photo.likes }} likes</p>
+        </div>
+        
       </app-photo-list-item>
     </ng-container>
   </div>

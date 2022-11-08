@@ -1,17 +1,27 @@
 .mat-card {
   display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
   flex-wrap: wrap;
 
+  .mat-card-avatar {
+    height: 60px;
+    width: 60px;
+  }
+  .mat-card-title {
+    padding: 15px 0 0;
+  }
+
   .mat-card-content {
-    position: absolute;
+    position: relative;
     z-index: 10;
     left: 0;
     right: 0;
     padding: 24px;
     background-color: rgb(255 255 255 / 55%);
     border-radius: 0 0 $card-border-radius $card-border-radius;
+    
+    .like-count, .view-count {
+      display: flex;
+    }
   }
 
   &.thumbnails {
@@ -41,9 +51,19 @@
   &.preview {
     padding-bottom: 0;
     border-radius: $card-border-radius;
+    max-width: 66%;
 
     .mat-card-header {
       min-height: 62.22px;
+
+      p {
+        display: flex;
+        justify-content: flex-start;
+  
+        a {
+          margin: 0 5px;
+        }
+      }
     }
 
     .mat-card-image {
@@ -52,8 +72,6 @@
     }
 
     .mat-card-content {
-      top: 78px;
-
       p {
         font-size: 1.2rem;
         margin-bottom: 0;

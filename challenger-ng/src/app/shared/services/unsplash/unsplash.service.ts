@@ -67,6 +67,15 @@ export class UnsplashService {
     return from(this.api.topics.list({ page, perPage, orderBy }));
   }
 
+  listTopicPhotos(id: string): Observable<
+  ApiResponse<{
+    results: Photo[];
+    total: number;
+  }>
+> {
+  return from(this.api.collections.getPhotos({ topicId: id }));
+}
+
   listStats(): Observable<
     ApiResponse<{
       results: Stats;
