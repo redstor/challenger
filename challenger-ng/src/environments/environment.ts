@@ -5,7 +5,7 @@ export const environment: IEnvironment = {
   production: false,
   unsplash: {
     // add your access key here and remember to remove it before you create a pull request
-    accessKey: 'ACCESS-KEY',
+    accessKey: 'UNSPLASH_ACCESS_KEY',
     url: 'https://api.unsplash.com'
   }
 };
