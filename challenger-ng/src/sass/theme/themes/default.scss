@@ -1,0 +1,29 @@
+// src/styles/themes/_light.scss
+
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "../../layout/layout-theme.scss" as layout;
+
+$default-primary: mat.define-palette(mat.$deep-purple-palette, A200, A100, A400);
+$default-accent: mat.define-palette(mat.$amber-palette, 200, A100, A400);
+$default-warn: mat.define-palette(mat.$red-palette);
+$default-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $default-primary,
+      accent: $default-accent,
+      warn: $default-warn,
+    ),
+  )
+);
+
+$default-success: mat.define-palette(mat.$green-palette);
+$default-info: mat.define-palette(mat.$blue-palette);
+
+$default-variants: (
+  success: $default-success,
+  info: $default-info,
+);
+
+@include mat.all-component-themes($default-theme);
+@include layout.theme($default-theme);

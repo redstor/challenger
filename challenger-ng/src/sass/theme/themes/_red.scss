@@ -1,0 +1,31 @@
+// src/styles/themes/dark.scss
+
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "../../layout/layout-theme.scss" as layout;
+
+$red-primary: mat.define-palette(mat.$red-palette);
+$red-accent: mat.define-palette(mat.$orange-palette, A200, A100, A400);
+$red-warn: mat.define-palette(mat.$deep-orange-palette);
+$red-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $red-primary,
+      accent: $red-accent,
+      warn: $red-warn,
+    ),
+  )
+);
+
+$red-success: mat.define-palette(mat.$light-green-palette);
+$red-info: mat.define-palette(mat.$light-blue-palette);
+
+$red-variants: (
+  success: $red-success,
+  info: $red-info,
+);
+
+.red-theme {
+  @include mat.all-component-themes($red-theme);
+  @include layout.theme($red-theme);
+}

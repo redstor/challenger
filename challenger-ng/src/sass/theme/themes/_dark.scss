@@ -1,0 +1,35 @@
+// src/styles/themes/dark.scss
+
+@use "sass:map";
+@use "@angular/material" as mat;
+@use "../../layout/layout-theme.scss" as layout;
+
+$default-dark-primary: mat.define-palette(mat.$blue-grey-palette, 900, A400, A100);
+$default-dark-accent: mat.define-palette(mat.$grey-palette, 900, A400, A100);
+$default-dark-warn: mat.define-palette(mat.$deep-orange-palette);
+$default-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $default-dark-primary,
+      accent: $default-dark-accent,
+      warn: $default-dark-warn,
+    ),
+  )
+);
+
+$default-dark-success: mat.define-palette(mat.$light-green-palette);
+$default-dark-info: mat.define-palette(mat.$light-blue-palette);
+$default-dark-variants: (
+  success: $default-dark-success,
+  info: $default-dark-info,
+);
+
+.dark-theme {
+  @include mat.all-component-themes($default-dark-theme);
+  @include layout.theme($default-dark-theme);
+}
+
+.mat-card.thumbnails .mat-card-content,
+.mat-card .mat-card-content {
+  background-color: rgba(0, 0, 0, 0.55);
+}
