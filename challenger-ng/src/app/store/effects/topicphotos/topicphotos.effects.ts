@@ -3,33 +3,33 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { exhaustMap, map, of, withLatestFrom, finalize, delay } from 'rxjs';
 import { UnsplashService } from '@app/shared/services/unsplash/unsplash.service';
 import { Store } from '@ngrx/store';
-import { AppContextActions, PhotosActions } from '@app/store/actions';
+import { AppContextActions, TopicPhotosActions } from '@app/store/actions';
 import { RouterSelectors } from '@app/store/selectors';
 
 @Injectable()
-export class PhotosEffects {
+export class TopicPhotosEffects {
   loadPhotos$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(PhotosActions.loadPhotos),
-      withLatestFrom(this.store.select(RouterSelectors.selectRouteParam('collectionId'))),
-      exhaustMap(([_, id]) => {
+      ofType(TopicPhotosActions.loadTopicPhotos),
+      withLatestFrom(this.store.select(RouterSelectors.selectRouteParam('topicId'))),
+      exhaustMap(([_, topicId]) => {
         this.store.dispatch(AppContextActions.setLoading());
-        this.store.dispatch(PhotosActions.restorePhotos());
-        return !id
-          ? of(PhotosActions.loadPhotosFailure())
-          : this.unsplash.listCollectionPhotos(id).pipe(
+        this.store.dispatch(TopicPhotosActions.restoreTopicPhotos());
+        return !topicId
+          ? of(TopicPhotosActions.loadTopicPhotosFailure())
+          : this.unsplash.listTopicPhotos(topicId).pipe(
               map(result => {
                 const success = result.type === 'success';
 
                 // toDo change to catch array of errors
-                !success && this.store.dispatch(AppContextActions.setError({ error: result.errors[0], from: 'photos' }));
+                !success && this.store.dispatch(AppContextActions.setError({ error: result.errors[0], from: 'topicphotos' }));
 
                 return success
-                  ? PhotosActions.loadPhotosSuccess({
-                      collectionId: id,
-                      photos: result.response.results, 
+                  ? TopicPhotosActions.loadTopicPhotosSuccess({
+                      topicIdOrSlug: topicId,
+                      topicPhotos: result.response.results, 
                     })
-                  : PhotosActions.loadPhotosFailure();
+                  : TopicPhotosActions.loadTopicPhotosFailure();
               }),
               finalize(() => this.store.dispatch(AppContextActions.setLoaded()))
             );

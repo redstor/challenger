@@ -4,6 +4,7 @@ import * as PhotoSelectors from './photo/photo.selectors';
 import * as PhotosSelectors from './photos/photos.selectors';
 import * as RouterSelectors from './router/router.selectors';
 import * as SearchSelectors from './search/search.selectors';
+import * as TopicSelectors from './topic/topic.selectors';
 import * as TopicsSelectors from './topics/topics.selectors';
 import * as StatsSelectors from './stats/stats.selectors';
 
@@ -14,6 +15,7 @@ export {
   PhotosSelectors,
   RouterSelectors,
   SearchSelectors,
+  TopicSelectors,
   TopicsSelectors,
   StatsSelectors
 };

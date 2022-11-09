@@ -73,13 +73,11 @@ export class UnsplashService {
     total: number;
   }>
 > {
-  return from(this.api.collections.getPhotos({ topicId: id }));
+  return from(this.api.topics.getPhotos({ topicIdOrSlug: id }));
 }
 
   listStats(): Observable<
-    ApiResponse<{
-      results: Stats;
-    }>
+    ApiResponse<{results: Stats;}>
   > {
     return this.requestService.get(environment.unsplash.url + '/stats/total').pipe(
       map(
