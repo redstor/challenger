@@ -2,24 +2,25 @@
   <mat-card-header>
     <img mat-card-avatar [src]="photo.user.profile_image.medium">
     <mat-card-title>{{ photo.user.first_name }} {{ photo.user.last_name }}</mat-card-title>
-    <mat-card-subtitle *ngIf="photo.user.location">
-      <mat-icon inline>where_to_vote</mat-icon> {{ photo.user.location }}
-    </mat-card-subtitle>
+    
+    <div>
+      <p *ngIf="photo.user.location != null"><mat-icon inline style="font-size:x-large">location_on</mat-icon> {{ photo.user.location }}</p>
+      <p>{{ photo.user.bio }}</p>
+      <p *ngIf="photo.user.portfolio_url != null"><mat-icon inline style="font-size:x-large">language</mat-icon><a href="{{ photo.user.portfolio_url }}">{{ photo.user.portfolio_url }}</a></p>
+    </div>
   </mat-card-header>
-
   <mat-card-content>
-    <div fxFlex fxLayout="column" fxLayout.gt-xs="row" fxLayoutGap="24px">
+    <div fxFlex fxLayout="column" fxLayoutGap="24px">
       <div fxFlex fxLayoutAlign="start center">
-        <p>{{ photo.description | titlecase }}</p>
+          <p>{{ photo.description | titlecase }}</p>
       </div>
       <div fxLayout="row" fxLayoutGap="12px" fxLayoutAlign="end">
-        <p fxLayoutAlign="center">
-          <mat-icon inline>favorite</mat-icon> {{ photo.likes }} likes
-          &nbsp;|&nbsp;&nbsp; <mat-icon inline>visibility</mat-icon> {{ photo.views }} views
-        </p>
+        <p class="like-count"><mat-icon inline>favorite</mat-icon>&nbsp; {{ photo.likes }} likes</p>     
+        <p class="view-count"><mat-icon inline>visibility</mat-icon>&nbsp; {{ photo.views }} views</p>
       </div>
     </div>
   </mat-card-content>
 
   <img mat-card-image [src]="photo.urls.full" [alt]="photo.alt_description" />
 </mat-card>
+

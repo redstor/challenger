@@ -67,10 +67,17 @@ export class UnsplashService {
     return from(this.api.topics.list({ page, perPage, orderBy }));
   }
 
+  listTopicPhotos(id: string): Observable<
+  ApiResponse<{
+    results: Photo[];
+    total: number;
+  }>
+> {
+  return from(this.api.topics.getPhotos({ topicIdOrSlug: id }));
+}
+
   listStats(): Observable<
-    ApiResponse<{
-      results: Stats;
-    }>
+    ApiResponse<{results: Stats;}>
   > {
     return this.requestService.get(environment.unsplash.url + '/stats/total').pipe(
       map(

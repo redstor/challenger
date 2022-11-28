@@ -32,6 +32,7 @@ export interface Photo {
     };
     portfolio_url: string | null;
     location: string | null;
+    bio: string | null;
   };
   likes: number;
   views?: number;

@@ -4,6 +4,7 @@ export enum RouteTypes {
   photo = 'photo',
   search = 'search',
   topics = 'topics',
+  topic = 'topic',
   stats = 'stats'
 }
 
@@ -13,5 +14,6 @@ export const EnableRoutes: RouteTypes[] = [
   RouteTypes.photo,
   RouteTypes.search,
   RouteTypes.topics,
+  RouteTypes.topic,
   RouteTypes.stats
 ];

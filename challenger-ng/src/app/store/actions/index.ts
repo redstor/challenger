@@ -5,5 +5,15 @@ import * as PhotosActions from './photos/photos.actions';
 import * as SearchActions from './search/search.actions';
 import * as TopicsActions from './topics/topics.actions';
 import * as StatsActions from './stats/stats.actions';
+import * as TopicPhotosActions from './topicPhotos/topicPhotos.actions';
 
-export { AppContextActions, CollectionActions, PhotoActions, PhotosActions, SearchActions, TopicsActions, StatsActions };
+export { 
+    AppContextActions, 
+    CollectionActions, 
+    PhotoActions, 
+    PhotosActions, 
+    SearchActions, 
+    TopicsActions, 
+    StatsActions,
+    TopicPhotosActions
+};

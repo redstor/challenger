@@ -12,6 +12,8 @@
         [routerLink]="'/collections/collection/' + collection.id"
       >
         <p class="title">{{ collection.title }}</p>
+        <div class="published">Created: {{ collection.published_at | date }}</div>
+        <div class="total-photos">Images: {{ collection.total_photos }}</div>
       </app-photo-list-item>
     </ng-container>
   </div>
