@@ -14,6 +14,10 @@ export class HeaderComponent implements OnInit {
   isFocused: boolean = false;
   navItems: MenuItem[] = [
     {
+      label: 'Home',
+      route: 'home'
+    },
+    {
       label: 'Collections',
       route: 'collections'
     },
@@ -28,6 +32,10 @@ export class HeaderComponent implements OnInit {
   ];
 
   mobileNavItems: MenuItem[] = [
+    {
+      label: 'Home',
+      route: 'home'
+    },
     {
       label: 'Collections',
       route: 'collections'

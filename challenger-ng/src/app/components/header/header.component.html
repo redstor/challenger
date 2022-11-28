@@ -12,7 +12,7 @@
         
         <!-- Mobile View -->
         <mat-menu #menu="matMenu" class="res-navbar">
-            <a *ngFor="let item of mobileNavItems" mat-flat-button routerLinkActive="mat-accent"
+            <a *ngFor="let item of mobileNavItems" mat-flat-button routerLinkActive="active-route"
                 [routerLink]="item.route">{{item.label}}</a>
             <button mat-button type="button" [matMenuTriggerFor]="settingMenu">
                 Settings
@@ -36,7 +36,7 @@
 
         <!-- Desktop View -->
         <div class="navbar">
-            <a *ngFor="let item of navItems" mat-button routerLinkActive="mat-accent"
+            <a *ngFor="let item of navItems" mat-button routerLinkActive="active-route"
                 [routerLink]="item.route">{{item.label}}</a>
             <button mat-button type="button" [matMenuTriggerFor]="settingMenu">
                 Settings

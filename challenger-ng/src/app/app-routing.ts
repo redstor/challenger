@@ -1,7 +1,11 @@
 import { Routes } from '@angular/router';
 
 export const challengerRoutes: Routes = [
-  { path: '', redirectTo: '/collections', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: 'home',
+    loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule),
+  },
   {
     path: 'collections',
     loadChildren: () => import('./features/collections/collections.module').then(m => m.CollectionsModule),

@@ -19,6 +19,11 @@
     
   }
 
+  .content {
+    background-color: mat.get-color-from-palette($primary-palette) !important;
+  }
+
+
   .search-bar {
     a span {
       color: mat.get-color-from-palette($secondary-palette);
