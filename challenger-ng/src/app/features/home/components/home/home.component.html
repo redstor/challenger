@@ -1,11 +1,11 @@
 <div class="content">
     <div class="home-info">
         <div class="home-heading">OPEN-SOURCE. CONCRETE. REAL-WORLD EXAMPLE.</div>
-        <p>Clone it, compile it, get it running, familiar yourself with the code, make a change, and submit a pull
+        <p>Clone it and get it running. Familiar yourself with the code, make a change, and submit a pull
             request. </p>
         <div class="home-buttons">
-            <button mat-button>Clone the Repo</button>
-            <button mat-button color="primary">View Issues</button>
+            <button mat-button (click)="goToNewWindow('https://github.com/redstor/challenger')">Clone the Repo</button>
+            <button class="clear" mat-button (click)="goToNewWindow('https://github.com/redstor/challenger/issues')">View Issues</button>
         </div>
     </div>
     <img src="../../../../../assets/images/home_page_image.png" alt="Site Logo" class="home-image">

@@ -9,7 +9,7 @@
                 Challenger
             </div>
         </a>
-        
+
         <!-- Mobile View -->
         <mat-menu #menu="matMenu" class="res-navbar">
             <a *ngFor="let item of mobileNavItems" mat-flat-button routerLinkActive="active-route"
@@ -53,7 +53,7 @@
                     <menu mat-menu-item (click)="setTheme('red')">Red</menu>
                 </mat-menu>
             </div>
-            <div>
+            <div mat-menu-item>
                 <ng-container #language></ng-container>
             </div>
         </mat-menu>
