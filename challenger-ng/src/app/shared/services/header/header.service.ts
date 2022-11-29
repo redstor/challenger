@@ -4,7 +4,6 @@ import { EventEmitter, Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HeaderService {
-
   searchChanged: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }

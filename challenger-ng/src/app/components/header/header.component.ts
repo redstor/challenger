@@ -66,6 +66,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //Debounce for the search request to only trigger when user is done typing
     this.subject.pipe(debounceTime(500), distinctUntilChanged()).subscribe((searchTextValue: string) => {
       this.headerService.onSearchChanged(searchTextValue);
     });

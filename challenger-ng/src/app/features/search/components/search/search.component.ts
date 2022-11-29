@@ -23,6 +23,7 @@ export class SearchComponent implements OnInit {
     this.store.dispatch(SearchActions.newSearch({ searchKey: value }));
   }
 
+  //Receives search value emitted from header
   subscribeHeaderListener() {
     this.headerService.searchChanged.subscribe((value: string) => {
       this.handleSearch(value);
