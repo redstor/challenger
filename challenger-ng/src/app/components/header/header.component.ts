@@ -1,9 +1,10 @@
-import { state, style, transition, animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from '@app/models/interfaces/menu-item.model';
+import { HeaderService } from '@app/shared/services/header/header.service';
 import { StyleManagerService } from '@app/shared/services/themes/style-manager.service';
-import { SearchActions } from '@app/store/actions';
-import { Store } from '@ngrx/store';
+import { distinctUntilChanged, Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import { Store } from '@ngrx/store';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  isFocused: boolean = false;
+  private subject: Subject<string> = new Subject();
   navItems: MenuItem[] = [
     {
       label: 'Home',
@@ -54,15 +55,19 @@ export class HeaderComponent implements OnInit {
     }
   ];
 
-  constructor(private styleManager: StyleManagerService, private store: Store) {}
+  constructor(private styleManager: StyleManagerService, private router: Router, private headerService: HeaderService) {}
 
   public setTheme(theme: string) {
     this.styleManager.setStyle(theme);
   }
 
-  handleSearch(value: string) {
-    this.store.dispatch(SearchActions.newSearch({ searchKey: value }));
+  handleSearch(event: any) {
+    this.router.url !== '/search' ? this.router.navigateByUrl('/search') : this.subject.next(event.target.value);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.subject.pipe(debounceTime(500), distinctUntilChanged()).subscribe((searchTextValue: string) => {
+      this.headerService.onSearchChanged(searchTextValue);
+    });
+  }
 }

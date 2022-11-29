@@ -60,7 +60,7 @@
         <div class="search-bar" id="search-bar">
             <mat-form-field class="text-field">
                 <mat-label>Search</mat-label>
-                <input matInput placeholder="E.g Drinks">
+                <input (keyup)="handleSearch($event)" matInput placeholder="E.g Drinks">
             </mat-form-field>
         </div>
     </mat-toolbar-row>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PhotoSearch } from '@app/models';
+import { HeaderService } from '@app/shared/services/header/header.service';
 import { SearchActions } from '@app/store/actions';
 import { SearchSelectors } from '@app/store/selectors';
 import { select, Store } from '@ngrx/store';
@@ -9,13 +10,23 @@ import { filter, Observable, take } from 'rxjs';
   selector: 'app-search',
   templateUrl: './search.component.html'
 })
-export class SearchComponent {
+export class SearchComponent implements OnInit {
   results$: Observable<ReadonlyArray<PhotoSearch>> = this.store.pipe(select(SearchSelectors.selectSearchResult));
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private headerService: HeaderService) {}
+
+  ngOnInit(): void {
+    this.subscribeHeaderListener();
+  }
 
   handleSearch(value: string) {
     this.store.dispatch(SearchActions.newSearch({ searchKey: value }));
+  }
+
+  subscribeHeaderListener() {
+    this.headerService.searchChanged.subscribe((value: string) => {
+      this.handleSearch(value);
+    });
   }
 
   onScrollDown(): void {
