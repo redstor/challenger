@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TopicsComponent } from './components/topics/topics.component';
+import { TopicComponent } from './components/topic/topic.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { ComponentsModule } from '@app/shared/components/components.module';
 import { FlexModule } from '@angular/flex-layout';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
 
 const routes: Routes = [
   {
@@ -14,11 +16,18 @@ const routes: Routes = [
     data: {
       breadcrumb: 'topics'
     }
+  },
+  {
+    path: 'topic/:topicId',
+    component: TopicComponent,
+    data: {
+      breadcrumb: 'topic'
+    }
   }
 ];
 
 @NgModule({
-  declarations: [TopicsComponent],
+  declarations: [TopicsComponent, TopicComponent],
   imports: [CommonModule, ComponentsModule, RouterModule.forChild(routes), MatIconModule, FlexModule, InfiniteScrollModule]
 })
 export class TopicsModule {}

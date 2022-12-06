@@ -7,6 +7,7 @@
         fxFlex.gt-lg="20"
         [photo_url]="topic.cover_photo?.urls?.small!"
         [photo_description]="topic.cover_photo?.description!"
+        [routerLink]="'/topics/topic/' + topic.id"
       >
         <p class="title">{{ topic.title }}</p>
       </app-photo-list-item>
