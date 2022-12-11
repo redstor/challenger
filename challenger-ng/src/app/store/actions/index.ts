@@ -6,6 +6,7 @@ import * as SearchActions from './search/search.actions';
 import * as TopicsActions from './topics/topics.actions';
 import * as StatsActions from './stats/stats.actions';
 import * as TopicPhotosActions from './topicPhotos/topicPhotos.actions';
+import * as UsersActions from './users/users.actions';
 
 export { 
     AppContextActions, 
@@ -15,5 +16,6 @@ export {
     SearchActions, 
     TopicsActions, 
     StatsActions,
-    TopicPhotosActions
+    TopicPhotosActions,
+    UsersActions
 };

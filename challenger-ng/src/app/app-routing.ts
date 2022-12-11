@@ -33,5 +33,13 @@ export const challengerRoutes: Routes = [
       preload: true,
       delay: 200
     }
-  }
+  },
+  {
+    path: 'users',
+    loadChildren: () => import('./features/users/users.module').then(m => m.UsersModule),
+    data: {
+      preload: true,
+      delay: 250
+    }
+  },
 ];
