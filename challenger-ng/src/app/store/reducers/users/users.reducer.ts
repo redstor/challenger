@@ -1,9 +1,8 @@
-import { PhotoSearch } from '@app/models';
 import { UsersSearch } from '@app/models/types/user-search';
 import { UsersActions } from '@app/store/actions';
 import { createReducer, on } from '@ngrx/store';
 
-export const searchFeatureKey = 'search';
+export const searchFeatureKey = 'users';
 
 export interface State {
   results: ReadonlyArray<UsersSearch>,
