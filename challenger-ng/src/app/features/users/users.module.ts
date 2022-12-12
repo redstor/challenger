@@ -7,6 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { FlexModule } from '@angular/flex-layout';
 import {MatBadgeModule} from '@angular/material/badge';
+import { ThousandSuffixPipe } from '@app/shared/pipes/thousand-suffix.pipe';
+import { MatButtonModule } from '@angular/material/button';
 
 
 const routes: Routes = [
@@ -20,7 +22,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [UsersComponent],
-  imports: [CommonModule, ComponentsModule, RouterModule.forChild(routes), MatIconModule, MatCardModule,  FlexModule, MatBadgeModule]
+  declarations: [UsersComponent, ThousandSuffixPipe],
+  imports: [CommonModule, ComponentsModule, RouterModule.forChild(routes), MatIconModule, MatCardModule,  FlexModule, MatBadgeModule, MatButtonModule]
 })
 export class UsersModule {}
