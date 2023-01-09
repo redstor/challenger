@@ -4,7 +4,7 @@ import { ApiResponse } from 'unsplash-js/dist/helpers/response';
 import { Photo, Collection, CollectionOptions, Topic, TopicOptions, TopicOrderByEnum, Stats } from '@app/models';
 import { EnvironmentService } from '@app/shared/services';
 import { Full } from 'unsplash-js/dist/methods/photos/types';
-import { Photos } from 'unsplash-js/dist/methods/search/types/response';
+import { Photos, Users } from 'unsplash-js/dist/methods/search/types/response';
 import { PaginationParams } from 'unsplash-js/dist/types/request';
 // improved tree shaking
 import { Observable } from 'rxjs/internal/Observable';
@@ -87,5 +87,9 @@ export class UnsplashService {
           }>)
       )
     );
+  }
+
+  searchUsers(query: { query: string } & Pick<PaginationParams, 'page' | 'perPage'>): Observable<ApiResponse<Users>> {
+    return from(this.api.search.getUsers(query));
   }
 }

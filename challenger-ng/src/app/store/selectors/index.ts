@@ -7,6 +7,7 @@ import * as SearchSelectors from './search/search.selectors';
 import * as TopicSelectors from './topic/topic.selectors';
 import * as TopicsSelectors from './topics/topics.selectors';
 import * as StatsSelectors from './stats/stats.selectors';
+import * as UsersSelectors from './users/users.selectors';
 
 export {
   AppContextSelectors,
@@ -17,5 +18,6 @@ export {
   SearchSelectors,
   TopicSelectors,
   TopicsSelectors,
-  StatsSelectors
+  StatsSelectors,
+  UsersSelectors
 };

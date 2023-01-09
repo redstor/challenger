@@ -40,6 +40,10 @@ export class AppComponent implements OnInit {
     {
       label: 'Stats',
       route: 'stats'
+    },
+    {
+      label: 'Users',
+      route: 'users'
     }
   ]
 

@@ -9,6 +9,7 @@ import * as fromSearch from './search/search.reducer';
 import * as fromTopics from './topics/topics.reducer';
 import * as fromStats from './stats/stats.reducer';
 import * as fromTopicReducer from './topic/topic.reducer';
+import * as fromUsers from './users/users.reducer';
 
 export interface State {
   appContext: fromAppContext.State;
@@ -19,6 +20,7 @@ export interface State {
   topics: fromTopics.State;
   topicReducer: fromTopicReducer.State;
   stats: fromStats.State;
+  users: fromUsers.State;
   router: RouterReducerState<any>;
 }
 
@@ -31,6 +33,7 @@ export const reducers: ActionReducerMap<State> = {
   topics: fromTopics.reducer,
   topicReducer: fromTopicReducer.reducer,
   stats: fromStats.reducer,
+  users: fromUsers.reducer,
   router: routerReducer
 };
 

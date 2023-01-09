@@ -1,0 +1,27 @@
+<div class="layout-container">
+  <app-search-input (newSearch)="handleSearch($event)" placeholder="search a user..."></app-search-input>
+
+  
+  <div class="users">
+    
+    <ng-container *ngFor="let user of results$ | async">
+
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar [style.background]="'url(' + user.profile_image.medium + ') no-repeat center center'" [style.background-size] = "'cover'" ></div>
+          <mat-card-title>{{user.name}}</mat-card-title>
+          <mat-card-subtitle  *ngIf = "user.instagram_username">@{{user.instagram_username}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-icon [matBadge]="user.total_likes | thousandSuffixPipe : 0 ">favorite</mat-icon>
+          <mat-icon [matBadge]="user.total_photos | thousandSuffixPipe : 0 ">image</mat-icon>
+          <mat-icon [matBadge]="user.total_collections | thousandSuffixPipe : 0 ">collections</mat-icon>
+        </mat-card-content>
+        <mat-card-actions>
+          <a mat-button [href]="user.links.html" target="_blank"> <mat-icon>link</mat-icon>  Visit Page</a>
+        </mat-card-actions>
+      </mat-card>
+
+    </ng-container>
+  </div>
+</div>
