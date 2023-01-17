@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -28,6 +28,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatMenuModule } from '@angular/material/menu';
+import { CollectionListComponent } from './features/collections/components/collection-list/collection-list.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -35,7 +36,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 }
 
 @NgModule({
-  declarations: [AppComponent, BreadcrumbsComponent],
+  declarations: [AppComponent, BreadcrumbsComponent,],
   imports: [
     BrowserModule,
     StoreModule.forRoot(reducers, {
@@ -57,6 +58,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
+    MatPaginatorModule,
     MatProgressSpinnerModule,
     MatSnackBarModule,
     HttpClientModule,
@@ -68,9 +70,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         deps: [HttpClient]
       },
     }),
-    MatButtonModule
+
   ],
   providers: [RouterPreloadStrategyService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

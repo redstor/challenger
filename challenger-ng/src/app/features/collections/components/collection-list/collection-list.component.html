@@ -1,6 +1,12 @@
 <div class="layout-container">
-  <mat-paginator [length]="total$ | async" [pageSize]="pageSize" (page)="loadCollection($event)"></mat-paginator>
+  <label for="">{{ 'paginator.itemsPerPage' | translate }}</label>
 
+  <mat-paginator
+    [length]="total$ | async"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="loadCollection($event)"
+  ></mat-paginator>
   <div class="gallery" fxLayout="column" fxLayout.gt-sm="row wrap">
     <ng-container *ngFor="let collection of collections$ | async">
       <app-photo-list-item
@@ -12,8 +18,8 @@
         [routerLink]="'/collections/collection/' + collection.id"
       >
         <p class="title">{{ collection.title }}</p>
-        <div class="published">Created: {{ collection.published_at | date }}</div>
-        <div class="total-photos">Images: {{ collection.total_photos }}</div>
+        <div class="published">{{ 'components.shared.created' | translate }}: {{ collection.published_at | date }}</div>
+        <div class="total-photos">{{ 'components.shared.images' | translate }}: {{ collection.total_photos }}</div>
       </app-photo-list-item>
     </ng-container>
   </div>

@@ -11,6 +11,7 @@ import { SearchInputComponent } from './search-input/search-input.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [PhotoListItemComponent, PhotoComponent, SearchInputComponent],
@@ -23,8 +24,11 @@ import { MatInputModule } from '@angular/material/input';
     FlexModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    TranslateModule.forChild()
+
   ],
+
   exports: [PhotoListItemComponent, PhotoComponent, SearchInputComponent]
 })
-export class ComponentsModule {}
+export class ComponentsModule { }

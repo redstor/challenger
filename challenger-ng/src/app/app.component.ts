@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { AppContextSelectors } from './store/selectors';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { filter } from 'rxjs/internal/operators/filter';
-
+import { TranslateService } from '@ngx-translate/core';
 import { StyleManagerService } from './shared/services/themes/style-manager.service';
 import { MatMenuModule } from '@angular/material/menu';
 import { MenuItem } from './models/interfaces/menu-item.model';
@@ -14,6 +14,7 @@ import { MenuItem } from './models/interfaces/menu-item.model';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [TranslateService],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
@@ -50,8 +51,15 @@ export class AppComponent implements OnInit {
     private moduleLoaderService: ModuleLoaderService,
     private router: Router,
     private toastService: ToastService,
-    private styleManager: StyleManagerService
-  ) {}
+    private styleManager: StyleManagerService,
+    private translate: TranslateService
+  ) {
+    this.navItems.forEach(item => {
+      this.translate.get('breadcrumbs.' + item.route).subscribe((res: string) => {
+        item.label = res;
+      });
+    });
+  }
 
   ngOnInit(): void {
     this.loadLoader();

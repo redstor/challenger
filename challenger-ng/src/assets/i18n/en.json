@@ -7,5 +7,33 @@
     "topics": "Topics",
     "topic": "Topic",
     "stats": "Stats"
+  },
+
+  "app-bar": {
+    "colors": {
+      "light": "Light",
+      "dark": "Dark",
+      "red": "Red"
+    }
+  },
+  "paginator": {
+    "itemsPerPage": "Items per page:",
+    "firstPageLabel": "First page",
+    "lastPageLabel": "Last page",
+    "nextPageLabel": "Next page",
+    "previousPageLabel": "Previous page",
+    "range_empty": "0 of {{length}}",
+    "range": "{{startIndex}} - {{endIndex}} of {{length}}"
+  },
+  "components": {
+    "shared": {
+      "created": "Created",
+      "images": "Images",
+      "likes": "likes",
+      "views": "views"
+    },
+    "search-input": {
+      "placeholder": "Search a photo..."
+    }
   }
 }

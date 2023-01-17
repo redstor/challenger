@@ -1,23 +1,23 @@
 <div class="layout-container">
-    <div class="gallery" fxLayout.sm="column" fxLayout.gt-sm="row wrap">
-      <ng-container *ngFor="let photo of topicPhotos$ | async">
-        <app-photo-list-item
-          fxFlex
-          fxFlex.gt-sm="28"
-          fxFlex.gt-lg="20"
-          [photo_url]="photo.urls.small"
-          [photo_description]="photo.alt_description!"
-        >
-          
-          <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="12px">
-            <h3>{{ photo.user.first_name }} {{ photo.user.last_name }}</h3>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="12px">
-            <p><mat-icon inline>favorite</mat-icon>{{ photo.likes }} likes</p>
-          </div>
-          
-        </app-photo-list-item>
-      </ng-container>
-    </div>
+  <div class="gallery" fxLayout.sm="column" fxLayout.gt-sm="row wrap">
+    <ng-container *ngFor="let photo of topicPhotos$ | async">
+      <app-photo-list-item
+        fxFlex
+        fxFlex.gt-sm="28"
+        fxFlex.gt-lg="20"
+        [photo_url]="photo.urls.small"
+        [photo_description]="photo.alt_description!"
+      >
+        <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="12px">
+          <h3>{{ photo.user.first_name }} {{ photo.user.last_name }}</h3>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap="12px">
+          <p>
+            <mat-icon inline>favorite</mat-icon>
+            {{ photo.likes }} {{ 'components.shared.likes' | translate }}
+          </p>
+        </div>
+      </app-photo-list-item>
+    </ng-container>
   </div>
-  
+</div>

@@ -10,5 +10,6 @@ export interface Collection {
 
 // toDo move to types same as topics
 export const CollectionOptions = {
-  perPage: 10
+  perPage: 10,
+  pageSizeOptions: [5, 10, 25, 50, 100]
 };

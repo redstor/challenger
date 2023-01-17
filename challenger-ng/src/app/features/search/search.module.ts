@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ComponentsModule } from '@app/shared/components/components.module';
 import { FlexModule } from '@angular/flex-layout';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -19,6 +20,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [SearchComponent],
-  imports: [CommonModule, ComponentsModule, RouterModule.forChild(routes), MatIconModule, FlexModule, InfiniteScrollModule]
+  imports: [CommonModule, ComponentsModule, RouterModule.forChild(routes), MatIconModule, FlexModule, InfiniteScrollModule, TranslateModule]
 })
 export class SearchModule {}

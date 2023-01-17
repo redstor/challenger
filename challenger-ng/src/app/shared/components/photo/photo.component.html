@@ -15,8 +15,8 @@
           <p>{{ photo.description | titlecase }}</p>
       </div>
       <div fxLayout="row" fxLayoutGap="12px" fxLayoutAlign="end">
-        <p class="like-count"><mat-icon inline>favorite</mat-icon>&nbsp; {{ photo.likes }} likes</p>
-        <p class="view-count"><mat-icon inline>visibility</mat-icon>&nbsp; {{ photo.views }} views</p>
+        <p class="like-count"><mat-icon inline>favorite</mat-icon>&nbsp; {{ photo.likes }} {{'components.shared.likes' | translate}}</p>
+        <p class="view-count"><mat-icon inline>visibility</mat-icon>&nbsp; {{ photo.views }} {{'components.shared.views' | translate }}</p>
       </div>
     </div>
   </mat-card-content>
