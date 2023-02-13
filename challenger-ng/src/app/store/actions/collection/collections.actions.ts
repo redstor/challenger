@@ -8,4 +8,4 @@ export const loadCollectionsSuccess = createAction(
   props<{ collections: Collection[]; total: number }>()
 );
 
-export const loadCollectionsFailure = createAction('[Collections] Load Collections Failure');
+export const loadCollectionsFailure = createAction('[Collections] Load Collections Failure', props<{ error: any}>());

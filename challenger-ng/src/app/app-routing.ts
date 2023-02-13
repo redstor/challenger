@@ -27,6 +27,14 @@ export const challengerRoutes: Routes = [
     }
   },
   {
+    path: 'random',
+    loadChildren: () => import('./features/random/random.module').then(m => m.RandomModule),
+    data: {
+      preload: true,
+      delay: 150
+    }
+  },
+  {
     path: 'stats',
     loadChildren: () => import('./features/stats/stats.module').then(m => m.StasModule),
     data: {

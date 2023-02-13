@@ -7,4 +7,4 @@ export const restorePhotos = createAction('[Photos] Restore Photos');
 
 export const loadPhotosSuccess = createAction('[Photos] Load Photos Success', props<{ collectionId: string; photos: Photo[] }>());
 
-export const loadPhotosFailure = createAction('[Photos] Load Photos Failure');
+export const loadPhotosFailure = createAction('[Photos] Load Photos Failure', props<{ error: any}>());

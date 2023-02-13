@@ -3,7 +3,7 @@ import { Photo } from '@app/models';
 
 export const loadTopicPhotos = createAction('[TopicPhotos] Load Topic Photos Success');
 
-export const loadTopicPhotosFailure = createAction('[TopicPhotos] Load Topic Photos Failure');
+export const loadTopicPhotosFailure = createAction('[TopicPhotos] Load Topic Photos Failure', props<{ error: any}>());
 
 export const restoreTopicPhotos = createAction('[TopicPhotos] Restore Topic Photos');
 

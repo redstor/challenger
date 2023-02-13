@@ -1,0 +1,8 @@
+<div class="layout-container">
+  <div fxLayout="row" fxLayoutAlign="end">
+    <button mat-flat-button color="primary" (click)="getNewRandomPhoto()" class="random-btn"><mat-icon>refresh</mat-icon> Click here to get another random photo!</button>
+  </div>
+  <div class="gallery" fxLayout.sm="column" fxLayoutAlign="center">
+    <app-photo [photo]="photo$ | async"></app-photo>
+  </div>
+</div>

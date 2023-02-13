@@ -8,7 +8,3 @@ export interface Collection {
   total_photos: number;
 }
 
-// toDo move to types same as topics
-export const CollectionOptions = {
-  perPage: 10
-};
