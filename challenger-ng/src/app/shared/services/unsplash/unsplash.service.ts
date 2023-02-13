@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createApi } from 'unsplash-js';
 import { ApiResponse } from 'unsplash-js/dist/helpers/response';
-import { Photo, Collection, CollectionOptions, Topic, TopicOptions, TopicOrderByEnum, Stats } from '@app/models';
+import { Photo, Collection, Topic, TopicOptions, TopicOrderByEnum, Stats } from '@app/models';
 import { EnvironmentService } from '@app/shared/services';
 import { Full } from 'unsplash-js/dist/methods/photos/types';
 import { Photos } from 'unsplash-js/dist/methods/search/types/response';
@@ -12,6 +12,7 @@ import { from } from 'rxjs/internal/observable/from';
 import { RequestService } from './../request/request.service';
 import { map } from 'rxjs/internal/operators/map';
 import { environment } from '@environments/environment';
+import { CollectionOptions } from '@app/models/types/collection';
 
 @Injectable({
   providedIn: 'root'
@@ -57,7 +58,7 @@ export class UnsplashService {
   listTopics(
     page: number = 1,
     perPage: number = TopicOptions.perPage,
-    orderBy: TopicOrderByEnum = TopicOptions.orderBy
+    orderBy: TopicOrderByEnum = TopicOptions.orderBy  
   ): Observable<
     ApiResponse<{
       results: Topic[];
@@ -84,6 +85,22 @@ export class UnsplashService {
         res =>
           ({ type: 'success', status: 200, originalResponse: res, response: { results: res } } as ApiResponse<{
             results: Stats;
+          }>)
+      )
+    );
+  }
+
+  getRandomPhoto(): Observable<
+  ApiResponse<{
+    results: Collection[];
+    total: number;
+  }> > {
+    return this.requestService.get(`${environment.unsplash.url}/photos/random`).pipe(
+      map(
+        res =>
+          ({ type: 'success', status: 200, originalResponse: res, response: res  } as ApiResponse<{
+            results: Collection[];
+            total: number;
           }>)
       )
     );

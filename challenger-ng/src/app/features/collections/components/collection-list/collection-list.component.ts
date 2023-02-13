@@ -1,4 +1,3 @@
-import { CollectionOptions } from './../../../../models/interfaces/collection.model';
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -6,6 +5,7 @@ import { Collection } from '@app/models';
 import { CollectionSelectors } from '@app/store/selectors';
 import { CollectionActions } from '@app/store/actions';
 import { PageEvent } from '@angular/material/paginator';
+import { CollectionOptions } from '@app/models/types/collection';
 
 @Component({
   selector: 'app-collection-list',

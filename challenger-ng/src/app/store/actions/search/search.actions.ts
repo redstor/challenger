@@ -12,7 +12,7 @@ export const photoSearchCompleted = createAction(
 );
 
 export const loadPhotosFailure = createAction(
-  '[Search] Photo Search Failure'
+  '[Search] Photo Search Failure', props<{ error: any}>()
 );
 
 export const loadMoreSearchItems = createAction(
