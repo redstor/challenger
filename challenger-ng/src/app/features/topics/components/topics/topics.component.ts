@@ -5,6 +5,7 @@ import { TopicsSelectors } from '@app/store/selectors';
 import { select, Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
+import { TopicOrderByEnum } from '@app/models';
 
 @Component({
   selector: 'app-topics',

@@ -1,0 +1,19 @@
+{
+  "breadcrumbs": {
+    "collections": "Collezioni",
+    "collection": "Collezione",
+    "photo": "Foto",
+    "search": "Ricerca",
+    "topics": "Temi",
+    "topic": "Argomento",
+    "stats": "Statistiche",
+    "random": "Foto casuale"
+  },
+  "navigation": {
+    "collections": "Collezioni",
+    "topics": "Temi",
+    "search": "Ricerca",
+    "stats": "Statistiche",
+    "random": "Foto casuale"
+  }
+}

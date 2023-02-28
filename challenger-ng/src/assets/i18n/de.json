@@ -1,0 +1,19 @@
+{
+  "breadcrumbs": {
+    "collections": "Sammlungen",
+    "collection": "Sammlung",
+    "photo": "Foto",
+    "search": "Suchen",
+    "topics": "Themen",
+    "topic": "Thema",
+    "stats": "Statistiken",
+    "random": "Zufälliges Foto"
+  },
+  "navigation": {
+    "collections": "Sammlungen",
+    "topics": "Themen",
+    "search": "Suchen",
+    "stats": "Statistiken",
+    "random": "Zufälliges Foto"
+  }
+}

@@ -1,19 +1,27 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <button mat-button type="button" class="navbar-toggle" data-toggle="collapse" [matMenuTriggerFor]="menu">
-      <mat-icon aria-hidden="false" aria-label="Expand menu" fontIcon="menu"></mat-icon>                      
+      <mat-icon aria-hidden="false" aria-label="Expand menu" fontIcon="menu"></mat-icon>
     </button>
     <mat-menu #menu="matMenu" class="res-navbar">
-      <a *ngFor="let item of navItems" mat-flat-button routerLinkActive="mat-accent" [routerLink]="item.route">{{item.label}}</a>
+      <a *ngFor="let item of navItems" mat-flat-button routerLinkActive="mat-accent" [routerLink]="item.route">
+        {{ 'navigation.' + item.route | translate }}
+      </a>
     </mat-menu>
 
     <a mat-button [routerLink]="'/'">Challenger</a>
     <div class="navbar">
-      <a *ngFor="let item of navItems" mat-button routerLinkActive="mat-accent" [routerLink]="item.route">{{item.label}}</a>
+      <a *ngFor="let item of navItems" mat-button routerLinkActive="mat-accent" [routerLink]="item.route">
+        {{ 'navigation.' + item.route | translate }}
+      </a>
     </div>
-    <div><ng-container #language></ng-container></div>
     <div class="themes">
-      <button mat-button type="button" [matMenuTriggerFor]="themeMenu"><mat-icon aria-hidden="false" aria-label="Select theme" fontIcon="expand_more"></mat-icon></button>
+      <mat-icon fontIcon="language"></mat-icon>
+      <ng-container #language></ng-container>
+      <mat-icon fontIcon="palette"></mat-icon>
+      <button mat-button type="button" [matMenuTriggerFor]="themeMenu">
+        <mat-icon aria-hidden="false" aria-label="Select theme" fontIcon="expand_more"></mat-icon>
+      </button>
       <mat-menu #themeMenu>
         <menu mat-menu-item (click)="setTheme('default')">Light</menu>
         <menu mat-menu-item (click)="setTheme('dark')">Dark</menu>

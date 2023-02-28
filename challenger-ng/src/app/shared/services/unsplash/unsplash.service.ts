@@ -68,22 +68,37 @@ export class UnsplashService {
   }
 
   listTopicPhotos(id: string): Observable<
-  ApiResponse<{
-    results: Photo[];
-    total: number;
-  }>
-> {
-  return from(this.api.topics.getPhotos({ topicIdOrSlug: id }));
-}
-
-  listStats(): Observable<
-    ApiResponse<{results: Stats;}>
+    ApiResponse<{
+      results: Photo[];
+      total: number;
+    }>
   > {
+    return from(this.api.topics.getPhotos({ topicIdOrSlug: id }));
+  }
+
+  listStats(): Observable<ApiResponse<{ results: Stats }>> {
     return this.requestService.get(environment.unsplash.url + '/stats/total').pipe(
       map(
         res =>
           ({ type: 'success', status: 200, originalResponse: res, response: { results: res } } as ApiResponse<{
             results: Stats;
+          }>)
+      )
+    );
+  }
+
+  getRandomPhoto(): Observable<
+    ApiResponse<{
+      results: Collection[];
+      total: number;
+    }>
+  > {
+    return this.requestService.get(`${environment.unsplash.url}/photos/random`).pipe(
+      map(
+        res =>
+          ({ type: 'success', status: 200, originalResponse: res, response: res } as ApiResponse<{
+            results: Collection[];
+            total: number;
           }>)
       )
     );

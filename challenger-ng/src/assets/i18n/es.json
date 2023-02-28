@@ -1,11 +1,19 @@
 {
   "breadcrumbs": {
     "collections": "Colecciones",
-    "collection": "Coleccion",
+    "collection": "Recopilación",
     "photo": "Foto",
     "search": "Buscar",
     "topics": "Temas",
     "topic": "Tema",
-    "stats": "Estadísticas"
+    "stats": "Estadísticas",
+    "random": "Foto aleatoria"
+  },
+  "navigation": {
+    "collections": "Colecciones",
+    "topics": "Temas",
+    "search": "Buscar",
+    "stats": "Estadísticas",
+    "random": "Foto aleatoria"
   }
 }

@@ -40,9 +40,12 @@ export class AppComponent implements OnInit {
     {
       label: 'Stats',
       route: 'stats'
+    },
+    {
+      label: 'Random',
+      route: 'random'
     }
-  ]
-
+  ];
 
   constructor(
     private store: Store,

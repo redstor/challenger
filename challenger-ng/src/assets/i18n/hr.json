@@ -1,0 +1,19 @@
+{
+  "breadcrumbs": {
+    "collections": "Zbirke",
+    "collection": "Kolekcija",
+    "photo": "Fotografija",
+    "search": "traži",
+    "topics": "teme",
+    "topic": "Tema",
+    "stats": "Statistika",
+    "random": "Slučajna fotografija"
+  },
+  "navigation": {
+    "collections": "Zbirke",
+    "topics": "teme",
+    "search": "traži",
+    "stats": "Statistika",
+    "random": "Slučajna fotografija"
+  }
+}

@@ -3,7 +3,7 @@ import { IEnvironment } from '@environments/environment.model';
 export const environment: IEnvironment = {
   production: true,
   unsplash: {
-    accessKey: 'UNSPLASH_ACCESS_KEY',
-    url: 'UNSPLASH_URL'
+    accessKey: '0lI0EeYuCxGNegUwJSoXGi59gCTigGeWzaFog98Athc',
+    url: 'https://api.unsplash.com'
   }
 };
