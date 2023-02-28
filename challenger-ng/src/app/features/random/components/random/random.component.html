@@ -1,0 +1,22 @@
+<div class="layout-container">
+  <div fxLayout="row" fxLayoutAlign="center" class="random-image-container">
+    <button mat-flat-button color="primary" (click)="getRandomPhoto()" class="random-image-button">I'm feeling lucky!</button>
+  </div>
+  <div class="gallery" fxLayout.sm="column" fxLayout.gt-sm="row wrap">
+    <div *ngIf="photo$ | async as photo">
+      <app-photo-list-item
+        class="random--thumbnail-item"
+        [photo_url]="photo.urls.small"
+        [photo_description]="photo.alt_description!"
+        [routerLink]="'/collections/photo/' + photo.id"
+      >
+        <div>
+          <p>
+            {{ photo.alt_description }}
+          </p>
+          <p></p>
+        </div>
+      </app-photo-list-item>
+    </div>
+  </div>
+</div>

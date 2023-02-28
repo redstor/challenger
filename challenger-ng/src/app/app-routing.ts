@@ -33,5 +33,13 @@ export const challengerRoutes: Routes = [
       preload: true,
       delay: 200
     }
+  },
+  {
+    path: 'random',
+    loadChildren: () => import('./features/random/random.module').then(m => m.RandomModule),
+    data: {
+      preload: true,
+      delay: 250
+    }
   }
 ];

@@ -9,11 +9,15 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class LanguageComponent implements OnInit, OnDestroy {
   enableLangs: any[] = [
+    { label: 'Afrikaans', value: 'af' },
+    { label: 'Deutsch', value: 'de' },
     { label: 'English', value: 'en' },
-    { label: 'Spanish', value: 'es' }
+    { label: 'Español', value: 'es' },
+    { label: 'Hrvatski', value: 'hr' },
+    { label: 'Italiano', value: 'it' }
   ];
   languageForm = new FormGroup({
-    language: new FormControl(this.enableLangs[0].value)
+    language: new FormControl(this.enableLangs[2].value)
   });
   subscriptions: Subscription = new Subscription();
 

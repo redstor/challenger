@@ -6,6 +6,14 @@
     "search": "Search",
     "topics": "Topics",
     "topic": "Topic",
-    "stats": "Stats"
+    "stats": "Stats",
+    "random": "Random Photo"
+  },
+  "navigation": {
+    "collections": "Collections",
+    "topics": "Topics",
+    "search": "Search",
+    "stats": "Stats",
+    "random": "Random Photo"
   }
 }

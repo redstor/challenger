@@ -1,0 +1,19 @@
+{
+  "breadcrumbs": {
+    "collections": "Versamelings",
+    "collection": "Versameling",
+    "photo": "Foto",
+    "search": "Soek",
+    "topics": "Onderwerpe",
+    "topic": "Onderwerp",
+    "stats": "Statistieke",
+    "random": "Ewekansige foto"
+  },
+  "navigation": {
+    "collections": "Versamelings",
+    "topics": "Onderwerpe",
+    "search": "Soek",
+    "stats": "Statistieke",
+    "random": "Ewekansige foto"
+  }
+}

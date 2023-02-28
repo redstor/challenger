@@ -1,8 +1,11 @@
 export enum TopicOrderByEnum {
-  latest = 'latest'
+  latest = 'latest',
+  featured = 'featured',
+  oldest = 'oldest',
+  position = 'position'
 }
 
 export const TopicOptions = {
-  perPage: 10,
-  orderBy: TopicOrderByEnum.latest
+  perPage: 20,
+  orderBy: TopicOrderByEnum.featured
 };
