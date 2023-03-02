@@ -42,7 +42,7 @@ jobs:
         env:
           UNSPLASH_URL: https://api.unsplash.com
 
-      - run: npx ng build --configuration=production
+      - run: npx ng build --configuration=production --base-href /challenger/
 
 #      - run: npx ng test --watch=false --browsers=ChromeHeadless
 
