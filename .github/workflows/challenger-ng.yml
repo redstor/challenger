@@ -48,9 +48,9 @@ jobs:
 
       - run: cp .nojekyll ./dist/challenger
 
-      - name: Deploy to repo
+      - name: Deploy to GitHub Pages
         uses:
-          crazy-max/ghaction-github-pages@v2
+          crazy-max/ghaction-github-pages@v3
         with:
           target_branch: gh-pages
           build_dir: ./challenger-ng/dist/challenger
@@ -59,7 +59,7 @@ jobs:
 
       - name: Deploy to redstor.github.io
         uses:
-          crazy-max/ghaction-github-pages@v2
+          crazy-max/ghaction-github-pages@v3
         with:
           repo: redstor/redstor.github.io
           target_branch: gh-pages
