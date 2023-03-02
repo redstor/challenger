@@ -28,6 +28,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MatMenuModule } from '@angular/material/menu';
+import { HeaderComponent } from './components/header/header.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -35,7 +38,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 }
 
 @NgModule({
-  declarations: [AppComponent, BreadcrumbsComponent],
+  declarations: [AppComponent, BreadcrumbsComponent, HeaderComponent],
   imports: [
     BrowserModule,
     StoreModule.forRoot(reducers, {
@@ -60,6 +63,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatProgressSpinnerModule,
     MatSnackBarModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
     // ngx-translate and the loader module
     TranslateModule.forRoot({
       loader: {

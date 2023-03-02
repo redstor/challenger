@@ -1,0 +1,35 @@
+.logo-frame {
+  display: grid;
+  grid-template-columns: auto auto;
+  font-size: 24px;
+}
+
+.logo-image {
+  height: 40px;
+}
+
+.search-bar {
+  max-width: 200px;
+  width: 100%;
+  margin-left: 40px !important;
+}
+
+.text-field {
+  width: 100%;
+}
+
+.active-route {
+  border-bottom: 3px solid white;
+}
+
+
+.header {
+  display: block;
+}
+
+// Styling for Mobile Views
+@media only screen and (max-width: 600px) {
+  .search-bar {
+    display: none;
+  }
+}

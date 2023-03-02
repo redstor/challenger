@@ -20,13 +20,6 @@
   padding: 6px 0;
 }
 
-.themes {
-  margin-left: auto;
-  display: flex;
-  box-sizing: border-box;
-  align-items: center;
-}
-
 @media (min-width: 960px) {
   .mat-button.navbar-toggle {
     display: none;
@@ -88,7 +81,7 @@
     &.active {
       span {
         cursor: initial;
-        font-weight: 500;
+        font-weight: 500px;
       }
     }
   }
