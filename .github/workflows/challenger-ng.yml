@@ -56,13 +56,3 @@ jobs:
           build_dir: ./challenger-ng/dist/challenger
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Deploy to redstor.github.io
-        uses:
-          crazy-max/ghaction-github-pages@v3
-        with:
-          repo: redstor/redstor.github.io
-          target_branch: gh-pages
-          build_dir: ./challenger-ng/dist/challenger
-        env:
-          GH_PAT: ${{ secrets.CHALLENGER_DEPLOY_TOKEN }}
