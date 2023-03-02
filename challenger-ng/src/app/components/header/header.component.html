@@ -1,0 +1,68 @@
+<mat-toolbar color="primary" class="header">
+    <mat-toolbar-row>
+        <button mat-button type="button" class="navbar-toggle" data-toggle="collapse" [matMenuTriggerFor]="menu">
+            <mat-icon aria-hidden="false" aria-label="Expand menu" fontIcon="menu"></mat-icon>
+        </button>
+        <a mat-button [routerLink]="'/'">
+            <div class="logo-frame">
+                <img src="../../../assets/images/logo.png" alt="Site Logo" class="logo-image">
+                Challenger
+            </div>
+        </a>
+
+        <!-- Mobile View -->
+        <mat-menu #menu="matMenu" class="res-navbar">
+            <a *ngFor="let item of mobileNavItems" mat-flat-button routerLinkActive="active-route"
+                [routerLink]="item.route">{{item.label}}</a>
+            <button mat-button type="button" [matMenuTriggerFor]="settingMenu">
+                Settings
+            </button>
+            <mat-menu #settingMenu>
+                <div class="themes">
+                    <menu mat-menu-item [matMenuTriggerFor]="themeMenu">
+                        Themes
+                    </menu>
+                    <mat-menu #themeMenu>
+                        <menu mat-menu-item (click)="setTheme('default')">Light</menu>
+                        <menu mat-menu-item (click)="setTheme('dark')">Dark</menu>
+                        <menu mat-menu-item (click)="setTheme('red')">Red</menu>
+                    </mat-menu>
+                </div>
+                <div>
+                    <ng-container #language></ng-container>
+                </div>
+            </mat-menu>
+        </mat-menu>
+
+        <!-- Desktop View -->
+        <div class="navbar">
+            <a *ngFor="let item of navItems" mat-button routerLinkActive="active-route"
+                [routerLink]="item.route">{{item.label}}</a>
+            <button mat-button type="button" [matMenuTriggerFor]="settingMenu">
+                Settings
+            </button>
+        </div>
+        <mat-menu #settingMenu>
+            <div class="themes">
+                <menu mat-menu-item [matMenuTriggerFor]="themeMenu">
+                    Themes
+                </menu>
+                <mat-menu #themeMenu>
+                    <menu mat-menu-item (click)="setTheme('default')">Light</menu>
+                    <menu mat-menu-item (click)="setTheme('dark')">Dark</menu>
+                    <menu mat-menu-item (click)="setTheme('red')">Red</menu>
+                </mat-menu>
+            </div>
+            <div mat-menu-item>
+                <ng-container #language></ng-container>
+            </div>
+        </mat-menu>
+        <div class="search-bar" id="search-bar">
+            <mat-form-field class="text-field">
+                <mat-label>Search</mat-label>
+                <input (keyup)="handleSearch($event)" matInput placeholder="E.g Drinks">
+            </mat-form-field>
+        </div>
+    </mat-toolbar-row>
+
+</mat-toolbar>

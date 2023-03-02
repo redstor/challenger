@@ -19,17 +19,24 @@
     
   }
 
-  .themes {
+  .content {
+    background-color: mat.get-color-from-palette($primary-palette) !important;
+  }
+
+
+  .search-bar {
     a span {
       color: mat.get-color-from-palette($secondary-palette);
     }
   }
 
   .breadcrumbs {
-    background-color: mat.get-color-from-palette($secondary-palette);
     a span {
       color: mat.get-color-from-palette($primary-palette, A400);
     }
+    font-size: 24px;
+    font-family: 'Orbitron';
+    line-height:50px;
   }
 
   .mat-select-panel {
