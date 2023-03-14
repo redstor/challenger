@@ -38,10 +38,10 @@
 
 .res-navbar {
   flex-direction: column;
-  -webkit-transition: all .2s linear;
-  -moz-transition: all .2s linear;
-  -o-transition: all .2s linear;
-  transition: all .2s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 
   a {
     display: block;
@@ -49,7 +49,6 @@
     padding: 12px;
   }
 }
-
 
 .mat-option span {
   color: #000000;
@@ -82,6 +81,7 @@
       span {
         cursor: initial;
         font-weight: 500px;
+        text-transform: capitalize;
       }
     }
   }
