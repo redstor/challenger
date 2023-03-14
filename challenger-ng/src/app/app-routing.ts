@@ -1,11 +1,10 @@
 import { Routes } from '@angular/router';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 export const challengerRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
-    loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule),
   },
   {
     path: 'collections',
@@ -38,7 +37,5 @@ export const challengerRoutes: Routes = [
       preload: true,
       delay: 200
     }
-  },
-  { path: '', component: PageNotFoundComponent, pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent }
+  }
 ];

@@ -28,7 +28,6 @@ yarn-error.log
 !.vscode/extensions.json
 .history/*
 
-
 # Miscellaneous
 /.angular/cache
 .sass-cache/
@@ -41,6 +40,3 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-
-# e2e
-nx.json 

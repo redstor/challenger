@@ -31,7 +31,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { HeaderComponent } from './components/header/header.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -39,7 +38,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 }
 
 @NgModule({
-  declarations: [AppComponent, BreadcrumbsComponent, HeaderComponent, PageNotFoundComponent],
+  declarations: [AppComponent, BreadcrumbsComponent, HeaderComponent],
   imports: [
     BrowserModule,
     StoreModule.forRoot(reducers, {
@@ -72,7 +71,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
-      }
+      },
     }),
     MatButtonModule
   ],

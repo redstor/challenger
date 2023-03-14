@@ -5,7 +5,7 @@
   $color-config: mat.get-color-config($theme);
   $primary-palette: map.get($color-config, 'primary');
   $secondary-palette: map.get($color-config, 'accent');
-
+  
   .mat-toolbar {
     background-color: mat.get-color-from-palette($primary-palette);
 
@@ -16,11 +16,13 @@
     .mat-select span {
       color: #ffffff;
     }
+    
   }
 
   .content {
     background-color: mat.get-color-from-palette($primary-palette) !important;
   }
+
 
   .search-bar {
     a span {
@@ -32,11 +34,9 @@
     a span {
       color: mat.get-color-from-palette($primary-palette, A400);
     }
-    font-size: 20px;
-    font-weight: 500;
-    font-family: 'Roboto';
-    line-height: 50px;
-    text-transform: capitalize;
+    font-size: 24px;
+    font-family: 'Orbitron';
+    line-height:50px;
   }
 
   .mat-select-panel {
@@ -45,6 +45,7 @@
 }
 
 @mixin typography($theme) {
+
 }
 
 @mixin theme($theme) {
